@@ -114,21 +114,41 @@
         .video-frame iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
         .video-frame video { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; background:#000; }
 
-        .ficha-demo { margin:20px 0 45px; }
-        .ficha-demo-card { border:1px solid var(--beige); border-radius:16px; overflow:hidden; background:var(--white); box-shadow:0 10px 30px rgba(31,31,31,.06); }
-        .ficha-demo-top { display:flex; justify-content:space-between; align-items:center; background:linear-gradient(135deg,var(--primary-dark) 0%,var(--dark-grad-end) 100%); color:#fff; padding:14px 22px; font-size:.85rem; letter-spacing:.05em; text-transform:uppercase; font-weight:700; }
-        .ficha-demo-top span:last-child { color:var(--gold-accent); font-size:.7rem; font-weight:600; text-transform:none; letter-spacing:0; }
-        .ficha-demo-stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); border-bottom:1px solid var(--beige); }
-        .ficha-demo-stats div { text-align:center; padding:18px 10px; border-right:1px solid var(--beige); }
-        .ficha-demo-stats div:last-child { border-right:none; }
-        .ficha-demo-stats strong { display:block; font-family:var(--font-serif); font-size:1.3rem; color:var(--primary-dark); }
-        .ficha-demo-stats span { font-size:.66rem; text-transform:uppercase; letter-spacing:.08em; color:var(--gray-text); }
-        .ficha-demo-body { display:grid; grid-template-columns:1.2fr 1fr; gap:20px; padding:22px; }
-        .ficha-demo-body p { font-size:.86rem; margin-bottom:8px; color:var(--primary-dark); }
-        .ficha-demo-note { background:var(--background-light); border:1px dashed var(--beige); border-radius:12px; padding:14px 16px; }
-        .ficha-demo-note strong { display:block; font-size:.78rem; text-transform:uppercase; letter-spacing:.05em; color:var(--primary-pink); margin-bottom:6px; }
-        .ficha-demo-note p { font-size:.8rem; color:var(--gray-text); margin:0; }
-        @media (max-width:640px){ .ficha-demo-body { grid-template-columns:1fr; } }
+        .slides-section { margin:20px 0 45px; }
+        .slides-wrap { position:relative; }
+        .slides-track { display:flex; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth;
+            padding:4px 2px 14px; -webkit-overflow-scrolling:touch; scrollbar-width:thin; }
+        .slides-track::-webkit-scrollbar { height:6px; }
+        .slides-track::-webkit-scrollbar-thumb { background:var(--beige); border-radius:10px; }
+        .slide { flex:0 0 auto; width:min(460px, 82vw); scroll-snap-align:center; border-radius:16px; overflow:hidden;
+            border:1px solid var(--beige); background:var(--white); box-shadow:0 10px 26px rgba(31,31,31,.07);
+            transition:transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s ease; cursor:zoom-in; position:relative; }
+        .slide:hover { transform:translateY(-4px); box-shadow:0 14px 32px rgba(31,31,31,.12); }
+        .slide img { width:100%; height:auto; display:block; }
+        .slide::after { content:'\f00e'; font-family:'Font Awesome 6 Free'; font-weight:900; position:absolute;
+            right:10px; bottom:10px; background:rgba(31,31,31,.72); color:#fff; width:32px; height:32px; border-radius:50%;
+            display:flex; align-items:center; justify-content:center; font-size:.85rem; opacity:0; transition:opacity .3s; }
+        .slide:hover::after { opacity:1; }
+        .slide-nav { position:absolute; top:45%; transform:translateY(-50%); z-index:5; width:42px; height:42px; border-radius:50%;
+            border:1px solid var(--beige); background:var(--white); color:var(--primary-pink); cursor:pointer; font-size:1rem;
+            box-shadow:0 6px 18px rgba(31,31,31,.14); display:flex; align-items:center; justify-content:center; }
+        .slide-nav:hover { background:var(--primary-pink); color:var(--white); }
+        .slide-nav.prev { left:-6px; } .slide-nav.next { right:-6px; }
+        .slides-dots { display:flex; justify-content:center; gap:7px; margin-top:10px; }
+        .slides-dots span { width:7px; height:7px; border-radius:50%; background:var(--beige); transition:all .3s; }
+        .slides-dots span.on { background:var(--primary-pink); width:20px; border-radius:10px; }
+        @media (max-width:768px){ .slide-nav { display:none; } }
+
+        .visor { position:fixed; inset:0; z-index:10000; background:rgba(20,14,17,.94); display:none;
+            align-items:center; justify-content:center; padding:20px; }
+        .visor.abierto { display:flex; }
+        .visor img { max-width:96vw; max-height:92vh; border-radius:10px; box-shadow:0 20px 60px rgba(0,0,0,.6); }
+        .visor-cerrar { position:absolute; top:16px; right:20px; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer; line-height:1; }
+        .visor-nav { position:absolute; top:50%; transform:translateY(-50%); background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.25);
+            color:#fff; width:48px; height:48px; border-radius:50%; font-size:1.2rem; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+        .visor-nav:hover { background:var(--primary-pink); }
+        .visor-nav.izq { left:16px; } .visor-nav.der { right:16px; }
+        .visor-contador { position:absolute; bottom:18px; left:0; right:0; text-align:center; color:rgba(255,255,255,.75); font-size:.82rem; letter-spacing:1px; }
 
         .pricing-section { background:linear-gradient(135deg,var(--primary-dark) 0%,var(--dark-grad-end) 100%); border-radius:24px; padding:45px; margin-top:30px; color:var(--white); text-align:center; }
         .pricing-section h3 { font-size:1.3rem; color:var(--gold-accent); margin-bottom:5px; text-transform:uppercase; letter-spacing:2px; }
@@ -271,7 +291,7 @@
         @media print {
             #preloader, .floating-actions-container, .pdf-section, .kit-section, .cta-container,
             .includes-grid, .gallery-block-title, .venue-info-grid, .venue-logo-wrap, .complementos-section, .publicidad-grid,
-            .signature-section, .video-section, footer { display:none !important; }
+            .signature-section, .video-section, .slides-section, .visor, footer { display:none !important; }
             .solo-print { display:block !important; }
             body { background:#fff !important; }
             .container { margin:0 !important; padding:0 !important; }
@@ -450,36 +470,38 @@
                 </div>
             </div>
 
-            <!-- ══ Ficha técnica: ejemplo ilustrativo (datos genéricos, no de un cliente real) ══ -->
-            <div class="ficha-demo reveal">
-                <h3 class="section-title"><i class="fas fa-list-ol"></i> Ficha Técnica del Evento <span style="font-size:0.8rem; background:var(--gold-accent); color:var(--white); padding:3px 10px; border-radius:12px; vertical-align:middle; font-weight:600; text-transform:uppercase; margin-left:8px;">Incluido</span></h3>
-                <p class="calc-hint">Al firmar contrato recibes una ficha técnica con el detalle logístico de tu evento en Villa Leona. Ejemplo ilustrativo del formato (datos de muestra, no de un cliente real):</p>
-                <div class="ficha-demo-card">
-                    <div class="ficha-demo-top">
-                        <span><i class="fas fa-qrcode"></i> Ficha Técnica</span>
-                        <span>Proyecto de muestra</span>
+            <!-- ══ Minuto a minuto: Ficha técnica INCLUIDA ══ -->
+            <div class="slides-section reveal">
+                <h3 class="section-title"><i class="fas fa-list-ol"></i> Ficha Técnica: Minuto a Minuto del Evento <span style="font-size:0.8rem; background:var(--gold-accent); color:var(--white); padding:3px 10px; border-radius:12px; vertical-align:middle; font-weight:600; text-transform:uppercase; margin-left:8px;">Incluido</span></h3>
+                <p class="calc-hint">Al firmar contrato recibes este cronograma detallado del evento sin costo adicional. Muestra de un proyecto anterior de Primavera Events Group. Desliza para verlo completo.</p>
+                <div class="slides-wrap">
+                    <button class="slide-nav prev" id="slidePrev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+                    <div class="slides-track" id="slidesTrack">
+                        <div class="slide"><img src="slide_minuto_01.png" alt="Minuto a minuto, hoja 1" loading="lazy"></div>
+                        <div class="slide"><img src="slide_minuto_02.png" alt="Minuto a minuto, hoja 2" loading="lazy"></div>
+                        <div class="slide"><img src="slide_minuto_04.png" alt="Minuto a minuto, hoja 4" loading="lazy"></div>
+                        <div class="slide"><img src="slide_minuto_05.webp" alt="Minuto a minuto, hoja 5" loading="lazy"></div>
+                        <div class="slide"><img src="slide_minuto_06.png" alt="Minuto a minuto, hoja 6" loading="lazy"></div>
+                        <div class="slide"><img src="slide_minuto_07.webp" alt="Minuto a minuto, hoja 7" loading="lazy"></div>
+                        <div class="slide"><img src="slide_minuto_08.png" alt="Minuto a minuto, hoja 8" loading="lazy"></div>
+                        <div class="slide"><img src="slide_minuto_09.png" alt="Minuto a minuto, hoja 9" loading="lazy"></div>
+                        <div class="slide"><img src="slide_minuto_10.png" alt="Minuto a minuto, hoja 10" loading="lazy"></div>
+                        <div class="slide"><img src="slide_minuto_11.webp" alt="Minuto a minuto, hoja 11" loading="lazy"></div>
+                        <div class="slide"><img src="slide_minuto_12.png" alt="Minuto a minuto, hoja 12" loading="lazy"></div>
+                        <div class="slide"><img src="slide_minuto_13.png" alt="Minuto a minuto, hoja 13" loading="lazy"></div>
+                        <div class="slide"><img src="slide_minuto_14.png" alt="Minuto a minuto, hoja 14" loading="lazy"></div>
                     </div>
-                    <div class="ficha-demo-stats">
-                        <div><strong>150</strong><span>Invitados</span></div>
-                        <div><strong>15</strong><span>Total mesas</span></div>
-                        <div><strong>Villa Leona</strong><span>Lugar</span></div>
-                        <div><strong>[Fecha]</strong><span>Fecha reporte</span></div>
-                    </div>
-                    <div class="ficha-demo-body">
-                        <div>
-                            <p><strong>Festejado(a):</strong> [Nombre]</p>
-                            <p><strong>Lugar:</strong> Villa Leona</p>
-                            <p><strong>Comensales en plano:</strong> Según confirmación</p>
-                            <p><strong>Coordinador general:</strong> Equipo Primavera Events Group</p>
-                            <p><strong>Tiempo de renta/servicio:</strong> 8 + 1 horas</p>
-                        </div>
-                        <div class="ficha-demo-note">
-                            <strong>Conciliación de banquetes</strong>
-                            <p>Platos contratados vs. comensales en plano, requerido por menú, estatus de confirmación.</p>
-                        </div>
-                    </div>
+                    <button class="slide-nav next" id="slideNext" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
                 </div>
-                <p class="venue-info-note">* Ejemplo ilustrativo del formato de entrega — no corresponde a un evento ni cliente real. Tu ficha técnica se genera con los datos reales de tu evento al firmar contrato.</p>
+                <div class="slides-dots" id="slidesDots"></div>
+            </div>
+
+            <div class="visor" id="visor">
+                <button class="visor-cerrar" id="visorCerrar" aria-label="Cerrar">&times;</button>
+                <button class="visor-nav izq" id="visorIzq" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+                <img id="visorImg" src="" alt="Hoja del minuto a minuto">
+                <button class="visor-nav der" id="visorDer" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
+                <div class="visor-contador" id="visorContador"></div>
             </div>
 
             <!-- ══ COMPLEMENTOS ══ -->
@@ -687,6 +709,77 @@
         var pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
         document.getElementById('lecturaBarra').style.width = pct + '%';
     }, { passive:true });
+
+    // ══ Carrusel del minuto a minuto ══
+    (function(){
+        var track = document.getElementById('slidesTrack');
+        if (!track) return;
+        var slides = track.querySelectorAll('.slide');
+        var dots = document.getElementById('slidesDots');
+        slides.forEach(function(_, i){
+            var d = document.createElement('span');
+            if (i === 0) d.className = 'on';
+            d.addEventListener('click', function(){ slides[i].scrollIntoView({block:'nearest', inline:'center', behavior:'smooth'}); });
+            dots.appendChild(d);
+        });
+        function paso(dir){
+            var w = slides[0].getBoundingClientRect().width + 16;
+            track.scrollBy({ left: dir * w, behavior:'smooth' });
+        }
+        document.getElementById('slidePrev').addEventListener('click', function(){ paso(-1); });
+        document.getElementById('slideNext').addEventListener('click', function(){ paso(1); });
+        track.addEventListener('scroll', function(){
+            var w = slides[0].getBoundingClientRect().width + 16;
+            var i = Math.round(track.scrollLeft / w);
+            dots.querySelectorAll('span').forEach(function(d, k){ d.classList.toggle('on', k === i); });
+        }, { passive:true });
+
+        var timer = null, manual = false;
+        function arranca(){
+            if (timer || manual) return;
+            timer = setInterval(function(){
+                var w = slides[0].getBoundingClientRect().width + 16;
+                var fin = track.scrollWidth - track.clientWidth - 8;
+                if (track.scrollLeft >= fin) track.scrollTo({ left:0, behavior:'smooth' });
+                else track.scrollBy({ left:w, behavior:'smooth' });
+            }, 3200);
+        }
+        function detiene(){ clearInterval(timer); timer = null; }
+        ['pointerdown','wheel','touchstart'].forEach(function(ev){
+            track.addEventListener(ev, function(){ manual = true; detiene(); }, { passive:true });
+        });
+        [document.getElementById('slidePrev'), document.getElementById('slideNext')].forEach(function(b){
+            b.addEventListener('click', function(){ manual = true; detiene(); });
+        });
+        if ('IntersectionObserver' in window) {
+            new IntersectionObserver(function(entries){
+                entries.forEach(function(e){ e.isIntersecting ? arranca() : detiene(); });
+            }, { threshold: 0.25 }).observe(track);
+        } else { arranca(); }
+    })();
+
+    // ══ Visor de las hojas del minuto a minuto ══
+    (function(){
+        var visor = document.getElementById('visor');
+        if (!visor) return;
+        var img = document.getElementById('visorImg'), cont = document.getElementById('visorContador');
+        var fuentes = Array.prototype.map.call(document.querySelectorAll('.slide img'), function(i){ return i.getAttribute('src'); });
+        var pos = 0;
+        function pinta(){ img.src = fuentes[pos]; cont.textContent = 'Hoja ' + (pos+1) + ' de ' + fuentes.length; }
+        function abre(i){ pos = i; pinta(); visor.classList.add('abierto'); document.body.style.overflow = 'hidden'; }
+        function cierra(){ visor.classList.remove('abierto'); document.body.style.overflow = ''; }
+        document.querySelectorAll('.slide').forEach(function(s, i){ s.addEventListener('click', function(){ abre(i); }); });
+        document.getElementById('visorCerrar').addEventListener('click', cierra);
+        visor.addEventListener('click', function(e){ if (e.target === visor) cierra(); });
+        document.getElementById('visorIzq').addEventListener('click', function(e){ e.stopPropagation(); pos = (pos-1+fuentes.length)%fuentes.length; pinta(); });
+        document.getElementById('visorDer').addEventListener('click', function(e){ e.stopPropagation(); pos = (pos+1)%fuentes.length; pinta(); });
+        document.addEventListener('keydown', function(e){
+            if (!visor.classList.contains('abierto')) return;
+            if (e.key === 'Escape') cierra();
+            if (e.key === 'ArrowLeft')  { pos = (pos-1+fuentes.length)%fuentes.length; pinta(); }
+            if (e.key === 'ArrowRight') { pos = (pos+1)%fuentes.length; pinta(); }
+        });
+    })();
 
     // Reproducción en bucle infinito para móviles (iOS / Android)
     (function(){
