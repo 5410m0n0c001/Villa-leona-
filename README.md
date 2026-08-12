@@ -1,10 +1,13 @@
 # Villa Leona · Jardín de Eventos
 
-Página de presentación de precios y amenidades para Villa Leona, operado por Primavera Events Group.
+Página de presentación de precios y amenidades para Villa Leona, con el branding real de Primavera Events Group (rosa/dorado, tipografía Playfair Display + Poppins).
 
 ## Contenido
 
-- `index.html` — página de una sola vista (portada en video, amenidades, paquete todo incluido, menú, equipo de servicio, DJ, cortesías y contacto).
+- `index.html` — página de una sola vista: portada con video (clic para reproducir, sin autoplay de audio), amenidades del jardín con fotos reales, paquete todo incluido, menú, equipo de servicio, DJ, cortesías, kit descargable y contacto directo con los planners.
+- Fotos reales de Villa Leona (`villa_leona_*.jpg`): carpa/salón, capilla/área consagrada, jardín, recepción, montaje de mesa, DJ y mesa de regalos.
+- Resto de fotos de servicio (mesas, banquete, cristalería, staff, cortesías) son acervo genérico de Primavera Events Group, reutilizable en cualquier sede.
+- Pendiente de fotografía propia: estacionamiento, habitación de descanso y restaurante (usan tarjetas de ícono mientras tanto).
 
 ## Paquete vigente
 

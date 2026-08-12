@@ -1,495 +1,633 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Primavera Events Group en Villa Leona | Jardín de Eventos</title>
-<meta name="description" content="Primavera Events Group en Villa Leona — Jardín de Eventos. Paquete todo incluido para bodas, XV años y grandes celebraciones.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --green-dark:#1c3b2c;
-    --green:#274d38;
-    --gold:#b8934a;
-    --gold-light:#d4b573;
-    --cream:#faf6ee;
-    --cream-2:#f2ead9;
-    --text:#2a2a24;
-    --text-soft:#5c5c50;
-    --card:#ffffff;
-    --border:#e4dcc7;
-  }
-  *{box-sizing:border-box;margin:0;padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    font-family:'Montserrat',sans-serif;
-    color:var(--text);
-    background:var(--cream);
-    line-height:1.6;
-    overflow-x:hidden;
-  }
-  h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:600;color:var(--green-dark);}
-  a{text-decoration:none;color:inherit;}
-  ul{list-style:none;}
-  img{max-width:100%;display:block;}
-  .container{max-width:1120px;margin:0 auto;padding:0 24px;}
-  .eyebrow{
-    display:inline-block;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
-    color:var(--gold);font-weight:600;margin-bottom:10px;
-  }
-  .section{padding:80px 0;}
-  .section-alt{background:var(--cream-2);}
-  .section-dark{background:var(--green-dark);color:#f1ece0;}
-  .section-dark h2, .section-dark h3, .section-dark h4{color:#f6f1e4;}
-  .center{text-align:center;}
-  .lead{color:var(--text-soft);max-width:680px;margin:14px auto 0;}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Villa Leona | Jardín de Eventos — Primavera Events Group</title>
+    <meta name="description" content="Villa Leona, Jardín de Eventos operado por Primavera Events Group. Paquete todo incluido: banquete, DJ, decoración y staff completo para bodas, XV años y grandes celebraciones.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-pink: #F65C7A; --primary-light: #FF8FA3; --primary-dark: #1F1F1F;
+            --background-light: #F8F6F4; --white: #FFFFFF; --soft-pink: #FADADD; --beige: #EFE7E1;
+            --gold-accent: #C9A96E; --gray-text: #6D6D6D;
+            --dark-grad-end: #3A3A3A;
+            --font-serif: 'Playfair Display', serif; --font-sans: 'Poppins', sans-serif;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        html, body { overflow-x:hidden !important; max-width:100vw !important; width:100% !important; position:relative; }
+        body { font-family: var(--font-sans); background: var(--background-light); color: var(--primary-dark); line-height:1.6; -webkit-font-smoothing:antialiased; }
+        h1,h2,h3,h4 { font-family: var(--font-serif); }
 
-  /* Header */
-  header{
-    position:fixed;top:0;left:0;right:0;z-index:100;
-    background:rgba(28,59,44,.92);backdrop-filter:blur(6px);
-    border-bottom:1px solid rgba(212,181,115,.25);
-  }
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1120px;margin:0 auto;}
-  .brand{display:flex;flex-direction:column;line-height:1.1;color:#fff;}
-  .brand .primary{font-family:'Playfair Display',serif;font-size:1.15rem;letter-spacing:.04em;color:#fff;}
-  .brand .secondary{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);margin-top:3px;}
-  .navlinks{display:flex;gap:28px;}
-  .navlinks a{color:#efe9da;font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;transition:color .2s;}
-  .navlinks a:hover{color:var(--gold-light);}
-  .navlinks{display:none;}
-  @media(min-width:820px){.navlinks{display:flex;}}
-  .nav-cta{
-    background:var(--gold);color:var(--green-dark);padding:10px 20px;border-radius:2px;
-    font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600;
-  }
+        #preloader { position:fixed; top:0; left:0; width:100vw; height:100vh; height:100dvh; background:linear-gradient(135deg,var(--primary-dark) 0%,var(--dark-grad-end) 100%); z-index:9999; display:flex; align-items:center; justify-content:center; transition:opacity .8s ease, visibility .8s ease; padding:20px; }
+        #preloader.fade-out { opacity:0; visibility:hidden; }
+        #preloader video { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; opacity:.65; z-index:1; }
+        .preloader-overlay { position:relative; z-index:2; text-align:center; width:90%; max-width:620px; background:rgba(255,255,255,.88); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); padding:36px 32px; border-radius:28px; border:1.5px solid var(--gold-accent); box-shadow:0 20px 50px rgba(0,0,0,.4); margin:auto; }
+        .preloader-logo { width:70px; height:70px; margin-bottom:14px; border-radius:50%; border:2px solid var(--gold-accent); object-fit:cover; display:inline-block; }
+        .preloader-title { font-size:1.6rem; margin-bottom:10px; font-weight:700; color:var(--primary-dark); }
+        .preloader-text { color:var(--gray-text); font-size:.96rem; margin-bottom:22px; line-height:1.5; }
+        .btn-enter { background:var(--primary-pink); color:var(--white); border:none; padding:12px 32px; border-radius:30px; font-size:.9rem; font-weight:600; cursor:pointer; box-shadow:0 6px 20px rgba(246,92,122,.4); text-transform:uppercase; letter-spacing:0.5px; display:inline-block; max-width:100%; white-space:normal; transition:transform 0.25s ease, background 0.25s ease; }
+        .btn-enter:hover { transform:scale(1.04); background:#e04b69; }
 
-  /* Hero */
-  .hero{position:relative;height:100vh;min-height:560px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#0e1f16;}
-  .hero-video-wrap{position:absolute;inset:0;}
-  .hero-video-wrap iframe{
-    position:absolute;top:50%;left:50%;width:177.77vh;min-width:100vw;height:56.25vw;min-height:100vh;
-    transform:translate(-50%,-50%);pointer-events:none;
-  }
-  .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,31,22,.55) 0%,rgba(14,31,22,.35) 40%,rgba(14,31,22,.85) 100%);}
-  .hero-content{position:relative;z-index:2;text-align:center;color:#fff;padding:0 20px;}
-  .hero-content .eyebrow{color:var(--gold-light);}
-  .hero-content h1{font-size:clamp(2.1rem,5vw,3.6rem);color:#fff;line-height:1.15;margin-bottom:14px;}
-  .hero-content h1 em{font-style:normal;color:var(--gold-light);}
-  .hero-content p{color:#e9e3d3;max-width:620px;margin:0 auto 30px;font-size:1.02rem;}
-  .btn-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
-  .btn{
-    display:inline-block;padding:14px 30px;border-radius:2px;font-size:.82rem;letter-spacing:.08em;
-    text-transform:uppercase;font-weight:600;transition:all .25s;
-  }
-  .btn-gold{background:var(--gold);color:var(--green-dark);}
-  .btn-gold:hover{background:var(--gold-light);}
-  .btn-outline{border:1px solid rgba(255,255,255,.6);color:#fff;}
-  .btn-outline:hover{background:rgba(255,255,255,.12);}
+        @media (max-width:768px) {
+            .preloader-overlay { padding:22px 16px !important; max-width:340px !important; border-radius:20px !important; background:rgba(255,255,255,.84) !important; }
+            .preloader-logo { width:54px !important; height:54px !important; margin-bottom:8px !important; }
+            .preloader-title { font-size:1.2rem !important; margin-bottom:6px !important; }
+            .preloader-text { font-size:.8rem !important; margin-bottom:14px !important; }
+            .btn-enter { padding:10px 20px !important; font-size:.78rem !important; }
+        }
 
-  /* Scroll cue */
-  .scroll-cue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);color:#e9e3d3;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;z-index:2;opacity:.8;}
+        .hero { position:relative; height:62vh; min-height:420px; overflow:hidden; display:flex; align-items:flex-end; justify-content:center; background:linear-gradient(135deg,var(--primary-dark) 0%,var(--dark-grad-end) 100%); }
+        .hero-video-wrap { position:absolute; inset:0; z-index:0; background-size:cover; background-position:center; }
+        .hero::before { content:''; position:absolute; inset:0; background:linear-gradient(to bottom, rgba(31,31,31,.25), rgba(31,31,31,.88)); z-index:1; }
+        .hero-play-btn { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; width:78px; height:78px; border-radius:50%; background:rgba(255,255,255,.92); border:2px solid var(--gold-accent); color:var(--primary-pink); font-size:1.6rem; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 10px 30px rgba(0,0,0,.4); transition:transform .25s ease; }
+        .hero-play-btn:hover { transform:translate(-50%,-50%) scale(1.08); }
+        .video-modal { position:fixed; inset:0; z-index:10000; background:rgba(20,14,17,.94); display:none; align-items:center; justify-content:center; padding:20px; }
+        .video-modal.abierto { display:flex; }
+        .video-modal-frame { width:min(960px, 92vw); aspect-ratio:16/9; background:#000; border-radius:12px; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.6); }
+        .video-modal-frame iframe { width:100%; height:100%; border:0; }
+        .video-modal-cerrar { position:absolute; top:16px; right:20px; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer; line-height:1; }
+        .hero-content { position:relative; z-index:2; text-align:center; padding:0 20px 60px; color:var(--white); max-width:800px; }
+        .hero-eyebrow { font-size:.8rem; letter-spacing:5px; text-transform:uppercase; color:var(--gold-accent); font-weight:600; margin-bottom:12px; }
+        .hero h1 { font-size:3rem; font-weight:700; line-height:1.1; text-shadow:0 3px 20px rgba(0,0,0,.6); margin-bottom:10px; }
+        .hero-sub { font-size:1.1rem; letter-spacing:3px; text-transform:uppercase; font-weight:300; color:rgba(255,255,255,.9); }
 
-  /* Intro */
-  .intro-grid{display:grid;gap:40px;align-items:center;}
-  @media(min-width:860px){.intro-grid{grid-template-columns:1fr 1fr;gap:60px;}}
-  .logo-mark{
-    width:76px;height:76px;border:1px solid var(--gold);border-radius:50%;
-    display:flex;align-items:center;justify-content:center;margin:0 auto 18px;color:var(--gold);
-    font-family:'Playfair Display',serif;font-size:1.6rem;
-  }
+        .container { max-width:1100px; margin:-80px auto 60px; position:relative; z-index:2; padding:0 20px; overflow-x:hidden !important; width:100% !important; box-sizing:border-box !important; }
+        .quote-card { background: var(--white); border-radius:30px; box-shadow:0 30px 60px rgba(31,31,31,.08); padding:60px; border:1px solid var(--beige); overflow-x:hidden !important; width:100% !important; max-width:100% !important; box-sizing:border-box !important; }
 
-  /* Amenities grid */
-  .grid-3{display:grid;gap:22px;grid-template-columns:1fr;}
-  @media(min-width:640px){.grid-3{grid-template-columns:1fr 1fr;}}
-  @media(min-width:960px){.grid-3{grid-template-columns:repeat(3,1fr);}}
-  .amenity-card{
-    background:var(--card);border:1px solid var(--border);border-radius:6px;padding:26px 24px;
-  }
-  .amenity-card .num{color:var(--gold);font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:8px;display:block;}
-  .amenity-card h4{font-size:1.02rem;margin-bottom:6px;}
-  .amenity-card p{color:var(--text-soft);font-size:.88rem;}
+        @media (max-width:768px) {
+            html, body { overflow-x:hidden !important; max-width:100vw !important; width:100% !important; position:relative; }
+            .container{margin-top:-40px;padding:0 6px !important; width:100% !important; max-width:100% !important; overflow-x:hidden !important; box-sizing:border-box !important;}
+            .quote-card{padding:16px 10px !important;border-radius:16px !important; width:100% !important; max-width:100% !important; overflow-x:hidden !important; box-sizing:border-box !important;}
+            .hero h1{font-size:1.8rem;}
+            .pricing-section { padding:18px 10px !important; border-radius:16px !important; width:100% !important; max-width:100% !important; box-sizing:border-box !important; }
+            .price-hero { font-size:2rem !important; word-break:break-word !important; }
+            .price-hero sup { font-size:1rem !important; }
+            .includes-grid { grid-template-columns:1fr !important; gap:16px !important; width:100% !important; max-width:100% !important; box-sizing:border-box !important; }
+            .include-item, .include-img-container, .include-img, .complemento-card, .publicidad-card, .venue-info-card, .price-tier { width:100% !important; max-width:100% !important; box-sizing:border-box !important; }
+        }
 
-  .check-list{display:grid;gap:14px;grid-template-columns:1fr;}
-  @media(min-width:700px){.check-list{grid-template-columns:1fr 1fr;}}
-  .check-list li{display:flex;gap:10px;font-size:.92rem;align-items:flex-start;}
-  .check-list li::before{content:"✦";color:var(--gold);flex-shrink:0;margin-top:2px;}
+        .venue-logo-wrap { text-align:center; margin-bottom:30px; }
+        .venue-logo-wrap a { display:inline-block; text-decoration:none; }
+        .venue-logo-wrap img { height:90px; width:auto; object-fit:contain; border:1px solid var(--beige); border-radius:16px; padding:10px 20px; background:var(--white); box-shadow:0 6px 18px rgba(0,0,0,.04); }
+        .venue-logo-wrap span { display:block; font-size:.75rem; color:var(--gray-text); text-transform:uppercase; letter-spacing:1.5px; font-weight:600; margin-top:8px; }
 
-  /* Package / pricing */
-  .price-card{
-    background:var(--card);border:1px solid var(--border);border-radius:10px;
-    padding:44px 36px;max-width:760px;margin:0 auto;box-shadow:0 20px 50px -20px rgba(28,59,44,.25);
-  }
-  .price-tiers{display:grid;gap:20px;grid-template-columns:1fr;margin:30px 0;}
-  @media(min-width:640px){.price-tiers{grid-template-columns:1fr 1fr;}}
-  .tier{
-    border:1px solid var(--border);border-radius:8px;padding:26px 22px;text-align:center;position:relative;
-  }
-  .tier.featured{border-color:var(--gold);background:linear-gradient(180deg,#fff, #fbf5e8);}
-  .tier .tag{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--gold);color:#fff;font-size:.65rem;padding:4px 12px;border-radius:20px;letter-spacing:.08em;text-transform:uppercase;}
-  .tier .amount{font-family:'Playfair Display',serif;font-size:2.1rem;color:var(--green-dark);margin:6px 0 2px;}
-  .tier .amount span{font-size:.95rem;color:var(--text-soft);font-family:'Montserrat',sans-serif;}
-  .tier .menu-label{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-soft);}
-  .price-meta{border-top:1px dashed var(--border);margin-top:10px;padding-top:24px;display:grid;gap:12px;}
-  .price-meta .row{display:flex;justify-content:space-between;gap:16px;font-size:.9rem;flex-wrap:wrap;}
-  .price-meta .row .k{color:var(--text-soft);}
-  .price-meta .row .v{font-weight:600;color:var(--green-dark);text-align:right;}
-  .fine{font-size:.76rem;color:var(--text-soft);margin-top:22px;line-height:1.6;}
+        .header-info { display:flex; justify-content:space-between; align-items:flex-start; border-bottom:1px solid var(--beige); padding-bottom:35px; margin-bottom:40px; flex-wrap:wrap; gap:25px; }
+        .header-main h2 { font-size:2.2rem; line-height:1.1; margin-bottom:10px; }
+        .header-main p { font-size:.95rem; color:var(--gray-text); max-width:600px; }
+        .badge-event { display:inline-flex; align-items:center; gap:8px; background:var(--soft-pink); color:var(--primary-pink); padding:6px 20px; border-radius:40px; font-size:.8rem; font-weight:700; margin-top:15px; text-transform:uppercase; letter-spacing:1.5px; }
+        .summary-boxes { display:flex; gap:12px; flex-wrap:wrap; }
+        .info-box { text-align:center; background:var(--background-light); padding:16px 20px; border-radius:16px; border:1px solid var(--beige); min-width:120px; flex:1; }
+        .info-box span { display:block; font-size:.68rem; color:var(--gray-text); text-transform:uppercase; letter-spacing:1.5px; font-weight:700; margin-bottom:6px; }
+        .info-box strong { display:block; font-size:1.25rem; font-family:var(--font-serif); }
 
-  /* Menu tabs */
-  .menu-block{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:28px 26px;}
-  .menu-block h4{color:var(--gold);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;font-family:'Montserrat',sans-serif;font-weight:700;margin-bottom:8px;}
-  .menu-block h3{margin-bottom:10px;}
-  .menu-block p{color:var(--text-soft);font-size:.9rem;}
+        .venue-info-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:15px; margin-bottom:20px; }
+        .venue-info-card { background:var(--background-light); border:1px solid var(--beige); border-radius:16px; padding:20px; text-align:center; }
+        .venue-info-card i { color:var(--primary-pink); font-size:1.3rem; margin-bottom:8px; display:block; }
+        .venue-info-card h5 { font-size:.72rem; text-transform:uppercase; letter-spacing:1.5px; font-weight:700; color:var(--gray-text); margin-bottom:5px; }
+        .venue-info-card p { font-size:.9rem; font-weight:600; }
+        .venue-info-note { font-size:.76rem; color:var(--gray-text); text-align:center; margin-bottom:45px; font-style:italic; }
 
-  /* Two column feature */
-  .feature-row{display:grid;gap:18px;grid-template-columns:1fr;margin-top:10px;}
-  @media(min-width:760px){.feature-row{grid-template-columns:1fr 1fr;}}
-  .feature-item{border-left:2px solid var(--gold);padding-left:16px;}
-  .feature-item h4{font-size:.98rem;margin-bottom:4px;}
-  .feature-item p{color:var(--text-soft);font-size:.86rem;}
+        .section-title { font-size:1.8rem; margin:45px 0 25px; display:flex; align-items:center; gap:12px; border-bottom:1px solid var(--beige); padding-bottom:10px; }
+        .section-title i { color:var(--primary-pink); font-size:1.4rem; }
 
-  /* Courtesies */
-  .courtesy-list{display:grid;gap:12px;grid-template-columns:1fr;max-width:640px;margin:0 auto;}
-  @media(min-width:600px){.courtesy-list{grid-template-columns:1fr 1fr;}}
-  .courtesy-list li{background:rgba(255,255,255,.06);border:1px solid rgba(212,181,115,.3);border-radius:6px;padding:14px 16px;font-size:.88rem;display:flex;gap:10px;}
-  .courtesy-list li::before{content:"◆";color:var(--gold-light);}
+        .includes-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:22px; margin-bottom:45px; width:100% !important; max-width:100% !important; box-sizing:border-box !important; }
+        .include-item { background:var(--white); border:1px solid var(--beige); border-radius:20px; overflow:hidden; transition:transform 0.35s cubic-bezier(0.2,0.8,0.2,1), box-shadow 0.35s ease; }
+        .include-item:hover { transform:translateY(-5px); box-shadow:0 16px 36px rgba(31,31,31,0.12); }
+        .include-img-container { width:100%; height:280px; overflow:hidden; }
+        .include-img { width:100%; height:100%; object-fit:cover; }
+        .include-content { padding:18px; }
+        .include-content h4 { font-size:1rem; margin-bottom:6px; display:flex; align-items:center; gap:8px; }
+        .include-content h4 i { color:var(--primary-pink); font-size:.9rem; }
+        .include-content p { font-size:.85rem; color:var(--gray-text); }
 
-  /* Team */
-  .team-grid{display:grid;gap:20px;grid-template-columns:1fr;}
-  @media(min-width:700px){.team-grid{grid-template-columns:repeat(3,1fr);}}
-  .team-card{text-align:center;padding:22px;border:1px solid var(--border);border-radius:8px;background:var(--card);}
-  .team-card .role{color:var(--gold);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;}
-  .team-card p{color:var(--text-soft);font-size:.85rem;margin-top:6px;}
+        .gallery-block-title { font-size:.85rem; text-transform:uppercase; letter-spacing:2.5px; color:var(--primary-pink); font-weight:700; margin:40px 0 16px; padding-bottom:8px; border-bottom:1px dashed var(--beige); }
 
-  /* Final note steps */
-  .steps{display:grid;gap:20px;grid-template-columns:1fr;counter-reset:step;}
-  @media(min-width:760px){.steps{grid-template-columns:repeat(5,1fr);}}
-  .step{text-align:center;}
-  .step .n{
-    width:38px;height:38px;border-radius:50%;border:1px solid var(--gold);color:var(--gold);
-    display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-family:'Playfair Display',serif;
-  }
-  .step h4{font-size:.86rem;margin-bottom:4px;}
-  .step p{font-size:.78rem;color:var(--text-soft);}
+        .pricing-section { background:linear-gradient(135deg,var(--primary-dark) 0%,var(--dark-grad-end) 100%); border-radius:24px; padding:45px; margin-top:30px; color:var(--white); text-align:center; }
+        .pricing-section h3 { font-size:1.3rem; color:var(--gold-accent); margin-bottom:5px; text-transform:uppercase; letter-spacing:2px; }
+        .pricing-section > p.calc-hint { color:rgba(255,255,255,.65); max-width:520px; margin:0 auto 25px; }
+        .price-tiers { display:grid; grid-template-columns:1fr 1fr; gap:20px; max-width:560px; margin:0 auto 28px; }
+        @media (max-width:640px){ .price-tiers{ grid-template-columns:1fr; } }
+        .price-tier { border:1.5px solid rgba(255,255,255,.15); border-radius:16px; padding:22px 16px; position:relative; }
+        .price-tier.featured { border-color:var(--gold-accent); background:rgba(201,169,110,.08); }
+        .price-tier .tag { position:absolute; top:-11px; left:50%; transform:translateX(-50%); background:var(--gold-accent); color:var(--primary-dark); font-size:.62rem; padding:4px 12px; border-radius:20px; letter-spacing:.08em; text-transform:uppercase; font-weight:700; white-space:nowrap; }
+        .price-tier .menu-label { font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.6); }
+        .price-hero { font-size:2.6rem; font-weight:700; margin:10px 0 2px; }
+        .price-hero sup { font-size:1.1rem; color:var(--gold-accent); }
+        .price-meta { text-align:left; max-width:520px; margin:0 auto; border-top:1px solid rgba(255,255,255,.15); padding-top:22px; display:grid; gap:12px; }
+        .price-meta .row { display:flex; justify-content:space-between; gap:16px; font-size:.9rem; flex-wrap:wrap; }
+        .price-meta .row .k { color:rgba(255,255,255,.65); }
+        .price-meta .row .v { font-weight:600; color:var(--gold-accent); text-align:right; }
+        .price-note { margin-top:20px; font-size:.75rem; color:rgba(255,255,255,.4); }
 
-  /* Contact */
-  .contact-grid{display:grid;gap:40px;grid-template-columns:1fr;}
-  @media(min-width:860px){.contact-grid{grid-template-columns:1.1fr .9fr;}}
-  .contact-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:30px;}
-  .contact-card .label{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
-  .contact-card .val{font-size:1.02rem;margin-bottom:18px;}
-  .planner-row{display:flex;justify-content:space-between;gap:14px;padding:14px 0;border-bottom:1px solid var(--border);font-size:.9rem;flex-wrap:wrap;}
-  .planner-row:last-child{border-bottom:none;}
+        .complementos-section { margin-top:50px; padding-top:40px; border-top:1px solid var(--beige); width:100% !important; max-width:100% !important; box-sizing:border-box !important; }
+        .complementos-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:22px; margin-top:20px; width:100% !important; max-width:100% !important; box-sizing:border-box !important; }
+        .complemento-card { border-radius:20px; overflow:hidden; border:1px solid var(--beige); background:var(--white); display:flex; transition:transform 0.35s cubic-bezier(0.2,0.8,0.2,1), box-shadow 0.35s ease; }
+        .complemento-card:hover { transform:translateY(-5px); box-shadow:0 16px 36px rgba(31,31,31,0.12); }
+        .complemento-img { width:120px; object-fit:cover; }
+        .complemento-body { padding:18px; flex:1; }
+        .complemento-body h4 { font-size:1rem; margin-bottom:6px; display:flex; align-items:center; gap:6px; }
+        .complemento-body h4 i { color:var(--primary-pink); }
+        .complemento-body p { font-size:.8rem; color:var(--gray-text); margin-bottom:12px; }
+        .btn-complemento { display:inline-flex; align-items:center; gap:6px; background:var(--primary-pink); color:var(--white); padding:6px 14px; border-radius:30px; font-weight:600; font-size:.75rem; text-decoration:none; }
 
-  footer{background:var(--green-dark);color:#cfd8cc;padding:40px 0;text-align:center;font-size:.82rem;}
-  footer .motto{color:var(--gold-light);font-family:'Playfair Display',serif;font-style:italic;margin-top:8px;font-size:.95rem;}
+        .floating-actions-container { position:fixed; bottom:15px; right:15px; z-index:1000; display:flex; flex-direction:column; align-items:flex-end; gap:15px; }
+        .fab-group { display:flex; flex-direction:column; align-items:flex-end; position:relative; }
+        .fab-main { width:50px; height:50px; border-radius:50%; background:var(--white); border:none; color:var(--primary-pink); font-size:1.4rem; cursor:pointer; display:flex; align-items:center; justify-content:center; position:relative; transition:all .4s cubic-bezier(.175,.885,.32,1.275); box-shadow:0 6px 18px rgba(0,0,0,.15); z-index:2; }
+        .fab-main:hover { transform:scale(1.1) translateY(-5px); }
+        .fab-label { position:absolute; right:65px; background:var(--white); color:var(--primary-dark); padding:6px 12px; border-radius:20px; font-size:.8rem; white-space:nowrap; box-shadow:0 4px 10px rgba(0,0,0,.1); opacity:0; visibility:hidden; transition:all .3s ease; font-weight:500; pointer-events:none; }
+        .fab-main:hover .fab-label { opacity:1; visibility:visible; right:60px; }
+        .fab-menu { display:flex; flex-direction:column-reverse; gap:8px; position:absolute; bottom:100%; right:5px; opacity:0; visibility:hidden; transform:translateY(20px); transition:all .4s cubic-bezier(.175,.885,.32,1.275); margin-bottom:10px; pointer-events:none; z-index:1; }
+        .fab-group.active .fab-menu { opacity:1; visibility:visible; transform:translateY(0); pointer-events:auto; }
+        .fab-item { width:40px; height:40px; border-radius:50%; background:var(--white); color:var(--primary-pink); display:flex; align-items:center; justify-content:center; text-decoration:none; font-size:1.1rem; box-shadow:0 4px 12px rgba(0,0,0,.1); transition:all .3s ease; }
+        .fab-item:hover { background:var(--primary-pink); color:var(--white); transform:scale(1.15); }
+        .fab-group.active .fab-main { transform:rotate(15deg) scale(.9); filter:brightness(1.2); }
 
-  .divider{width:60px;height:2px;background:var(--gold);margin:18px auto;}
-  .divider.left{margin-left:0;}
-</style>
+        .publicidad-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; margin-top:20px; }
+        .publicidad-card { display:block; border-radius:18px; overflow:hidden; border:1px solid var(--beige); transition:transform .3s ease; position:relative; }
+        .publicidad-card:hover { transform:translateY(-4px); }
+        .publicidad-card img { width:100%; height:200px; object-fit:cover; display:block; }
+        .publicidad-label { position:absolute; left:0; right:0; bottom:0; display:block; text-align:center;
+            background:linear-gradient(to top, rgba(31,31,31,.92) 0%, rgba(31,31,31,.72) 60%, rgba(31,31,31,0) 100%);
+            color:var(--white); font-size:.82rem; font-weight:600; letter-spacing:.5px; padding:22px 10px 12px; }
+        .publicidad-card:hover .publicidad-label { background:linear-gradient(to top, var(--primary-pink) 0%, rgba(246,92,122,.75) 60%, rgba(246,92,122,0) 100%); }
+
+        .kit-section { margin-top:50px; background:linear-gradient(135deg,var(--primary-dark) 0%,var(--dark-grad-end) 100%); border-radius:20px; padding:40px; color:white; display:flex; flex-wrap:wrap; align-items:center; gap:30px; }
+        .kit-content { flex:1; min-width:250px; }
+        .kit-badge { background:var(--gold-accent); display:inline-block; padding:4px 12px; border-radius:50px; font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; margin-bottom:12px; color:var(--primary-dark); }
+        .kit-content h3 { font-size:1.6rem; margin-bottom:8px; }
+        .kit-content p { color:rgba(255,255,255,.7); font-size:.85rem; }
+        .kit-buttons { display:flex; flex-direction:column; gap:10px; }
+        .btn-kit { display:inline-flex; align-items:center; gap:8px; padding:10px 20px; border-radius:50px; font-weight:600; font-size:.8rem; text-decoration:none; background:var(--primary-pink); color:white; white-space:nowrap; }
+
+        .signature-section { text-align:center; margin:26px 0 10px; }
+        .signature-section video { max-width:260px; width:100%; aspect-ratio:16/9; height:auto; object-fit:contain; display:inline-block; border-radius:12px; }
+
+        .pdf-section { margin-top:40px; text-align:center; padding:30px; background:var(--white); border:1px solid var(--beige); border-radius:20px; }
+        .pdf-section p { color:var(--gray-text); margin-bottom:15px; font-size:.85rem; }
+        .btn-pdf { display:inline-flex; align-items:center; gap:8px; background:var(--primary-dark); color:var(--white); padding:12px 30px; border-radius:50px; font-weight:600; font-size:.9rem; border:1px solid var(--gold-accent); cursor:pointer; font-family:var(--font-sans); }
+        .btn-pdf:hover { background:var(--dark-grad-end); }
+
+        .notes-section { margin-top:40px; padding:30px; border:1px solid var(--beige); border-radius:20px; background:var(--white); }
+        .notes-section h3 { font-size:1.25rem; margin-bottom:14px; display:flex; align-items:center; gap:10px; }
+        .notes-section h3 i { color:var(--primary-pink); }
+        .notes-section ul { padding-left:20px; margin-bottom:15px; }
+        .notes-section li { color:var(--gray-text); font-size:.85rem; margin-bottom:6px; }
+        .quote-phrase { font-style:italic; color:var(--primary-pink); font-weight:600; margin-top:15px !important; text-align:center; }
+
+        .cta-container { text-align:center; margin-top:50px; padding:40px 20px; background:var(--beige); border-radius:20px; }
+        .cta-container p { margin-bottom:20px; font-style:italic; font-weight:500; font-size:.95rem; }
+        .btn-wa { background:#25D366; color:white; padding:14px 35px; border-radius:50px; text-decoration:none; display:inline-flex; align-items:center; gap:10px; font-weight:600; }
+
+        .planners-contact-section { margin-top:50px; padding:40px 20px; background:linear-gradient(135deg, rgba(253,242,244,.8), rgba(248,250,252,.9)); border-radius:24px; border:1px solid rgba(226,160,182,.25); text-align:center; }
+        .planners-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:24px; max-width:700px; margin:20px auto 0; }
+        .planner-card { text-decoration:none; color:inherit; display:flex; flex-direction:column; background:var(--white); border-radius:20px; overflow:hidden; border:1px solid var(--beige); box-shadow:0 8px 20px rgba(0,0,0,.04); transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+        .planner-card:hover { transform:translateY(-6px); box-shadow:0 16px 32px rgba(226,160,182,.3); border-color:var(--primary-pink); }
+        .planner-img-wrap { position:relative; width:100%; height:320px; overflow:hidden; background:#f1f5f9; }
+        .planner-img { width:100%; height:100%; object-fit:cover; object-position:top center; transition:transform .4s ease; }
+        .planner-card:hover .planner-img { transform:scale(1.05); }
+        .planner-overlay { position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,.65) 0%, rgba(0,0,0,0) 60%); display:flex; align-items:flex-end; justify-content:center; padding:20px; opacity:0.95; transition:opacity .3s ease; }
+        .planner-card:hover .planner-overlay { opacity:1; }
+        .btn-planner-cta { background:var(--primary-pink); color:white; padding:12px 22px; border-radius:50px; font-size:.88rem; font-weight:600; display:inline-flex; align-items:center; gap:8px; box-shadow:0 4px 12px rgba(0,0,0,.2); }
+        .planner-info { padding:18px 15px; text-align:center; background:var(--white); }
+        .planner-info h4 { font-size:1.15rem; margin-bottom:4px; font-family:'Playfair Display', serif; }
+        .planner-info p { font-size:.82rem; color:var(--gray-text); margin:0; }
+
+        footer { padding:50px 20px; background:var(--white); border-top:1px solid var(--beige); text-align:center; margin-top:60px; }
+        .footer-container { max-width:800px; margin:0 auto; display:flex; flex-direction:column; align-items:center; gap:12px; }
+        .footer-logo { width:60px; height:60px; border-radius:50%; object-fit:cover; border:2px solid var(--gold-accent); }
+        .footer-container a { color:var(--gray-text); text-decoration:none; font-size:.85rem; }
+        .footer-bottom { margin-top:25px; padding-top:15px; border-top:1px solid var(--beige); font-size:.72rem; color:var(--gray-text); width:100%; }
+
+        /* Foto pendiente — venue Villa Leona aún sin acervo fotográfico propio */
+        .img-pendiente { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; text-align:center; padding:16px;
+            background:repeating-linear-gradient(45deg,#F5EFEB,#F5EFEB 10px,#EFE7E1 10px,#EFE7E1 20px); height:100%; }
+        .img-pendiente i { font-size:1.7rem; color:var(--primary-light); }
+        .img-pendiente span { font-size:.68rem; font-family:monospace; color:var(--gray-text); letter-spacing:.5px; }
+
+        @keyframes fadeInDown{from{opacity:0;transform:translateY(-30px);}to{opacity:1;transform:translateY(0);}}
+        @keyframes fadeInUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+        .hero h1{animation:fadeInDown 0.9s cubic-bezier(0.16,1,0.3,1);}
+        .hero-sub,.hero-eyebrow{animation:fadeInUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.15s both;}
+
+        .reveal { opacity:0; will-change:opacity, transform; transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1), transform 0.85s cubic-bezier(0.16,1,0.3,1); }
+        .reveal:not(.reveal-left):not(.reveal-right):not(.reveal-zoom) { transform:translateY(45px); }
+        .reveal-left { transform:translateX(-40px); }
+        .reveal-right { transform:translateX(40px); }
+        .reveal-zoom { transform:scale(0.86); }
+        .reveal.active { opacity:1 !important; transform:translate(0,0) scale(1) !important; }
+        .delay-1 { transition-delay:0.08s; } .delay-2 { transition-delay:0.16s; }
+        .delay-3 { transition-delay:0.24s; } .delay-4 { transition-delay:0.32s; }
+        .includes-grid > .reveal:nth-child(1) { transition-delay:0.04s; }
+        .includes-grid > .reveal:nth-child(2) { transition-delay:0.10s; }
+        .includes-grid > .reveal:nth-child(3) { transition-delay:0.16s; }
+        .includes-grid > .reveal:nth-child(4) { transition-delay:0.22s; }
+        .includes-grid > .reveal:nth-child(5) { transition-delay:0.28s; }
+        .includes-grid > .reveal:nth-child(n+6) { transition-delay:0.34s; }
+        @media (max-width:768px){ .reveal-left, .reveal-right { transform:translateY(30px); } }
+        @media (prefers-reduced-motion: reduce){ .reveal{opacity:1!important;transform:none!important;transition:none!important;} }
+
+        .lectura-barra { position:fixed; top:0; left:0; height:3px; width:0%; z-index:9998; background:linear-gradient(90deg, var(--primary-pink), var(--gold-accent)); }
+
+        .solo-print { display:none !important; }
+        @media print {
+            #preloader, .floating-actions-container, .pdf-section, .kit-section, .cta-container,
+            .includes-grid, .gallery-block-title, .venue-info-grid, .venue-logo-wrap, .complementos-section, .publicidad-grid,
+            .signature-section, footer { display:none !important; }
+            .solo-print { display:block !important; }
+            body { background:#fff !important; }
+            .container { margin:0 !important; padding:0 !important; }
+            .quote-card { box-shadow:none !important; padding:0 !important; border:none !important; }
+        }
+    </style>
 </head>
 <body>
+    <div class="lectura-barra" id="lecturaBarra"></div>
 
-<header>
-  <div class="nav">
-    <div class="brand">
-      <span class="primary">Primavera Events Group</span>
-      <span class="secondary">en Villa Leona · Jardín de Eventos</span>
-    </div>
-    <nav class="navlinks">
-      <a href="#amenidades">Amenidades</a>
-      <a href="#incluye">Qué incluye</a>
-      <a href="#menu">Menú</a>
-      <a href="#paquete">Paquete</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-    <a href="#contacto" class="nav-cta">Agenda tu cita</a>
-  </div>
-</header>
-
-<section class="hero" id="inicio">
-  <div class="hero-video-wrap">
-    <iframe src="https://www.youtube.com/embed/eQl4oj71JqI?autoplay=1&mute=1&loop=1&playlist=eQl4oj71JqI&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
-      title="Villa Leona - Jardín de Eventos" frameborder="0"
-      allow="autoplay; encrypted-media" allowfullscreen></iframe>
-  </div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <span class="eyebrow">Primavera Events Group · Villa Leona</span>
-    <h1>Un jardín para tus momentos<br><em>más importantes</em></h1>
-    <p>Bodas, XV años y grandes celebraciones en un entorno natural, con servicio todo incluido de principio a fin.</p>
-    <div class="btn-row">
-      <a href="#paquete" class="btn btn-gold">Ver paquete y precios</a>
-      <a href="#contacto" class="btn btn-outline">Agendar visita a las instalaciones</a>
-    </div>
-  </div>
-  <div class="scroll-cue">Desliza para conocer más ↓</div>
-</section>
-
-<section class="section" id="intro">
-  <div class="container intro-grid">
-    <div>
-      <span class="eyebrow">Jardín Villa Leona</span>
-      <h2>Un espacio pensado para grandes eventos</h2>
-      <div class="divider left"></div>
-      <p style="color:var(--text-soft)">Villa Leona es un jardín de eventos con capacidad hasta para 300 invitados, diseñado para bodas, XV años y celebraciones importantes. Primavera Events Group se encarga de coordinar cada detalle de tu evento dentro de estas instalaciones: desde la ambientación hasta el banquete, el DJ y el servicio de meseros.</p>
-    </div>
-    <div class="check-list">
-      <li>Servicio por 10 horas de instalaciones</li>
-      <li>Carpa plisada negra con tiras de focos y candiles de vidrio cortado</li>
-      <li>Fuente y jardín con iluminación arquitectónica</li>
-      <li>Pérgola para ceremonias civiles, religiosas o espirituales</li>
-      <li>Estacionamiento privado sin costo (60 autos)</li>
-      <li>Habitación de descanso dentro del jardín</li>
-      <li>5 habitaciones para 12 personas (costo extra)</li>
-      <li>Capacidad para 300 personas</li>
-      <li>Personal de baños y de mantenimiento incluido</li>
-      <li>Restaurante como parte de las instalaciones</li>
-    </div>
-  </div>
-</section>
-
-<section class="section section-alt" id="amenidades">
-  <div class="container center">
-    <span class="eyebrow">¿Qué tenemos para ti?</span>
-    <h2>Qué incluye tu evento</h2>
-    <p class="lead">Todo lo necesario para que la llegada y estancia de tus invitados sea impecable.</p>
-  </div>
-  <div class="container" style="margin-top:44px;">
-    <div class="grid-3">
-      <div class="amenity-card"><span class="num">01</span><h4>Estacionamiento</h4><p>Amplio estacionamiento privado que alberga hasta 60 autos.</p></div>
-      <div class="amenity-card"><span class="num">02</span><h4>Área de recepción</h4><p>Espacio cuidadosamente diseñado para recibir a los invitados en un ambiente refinado y exclusivo.</p></div>
-      <div class="amenity-card"><span class="num">03</span><h4>Área de jardín</h4><p>Entorno natural que aporta frescura, amplitud y armonía, ideal para celebrar en contacto con la naturaleza.</p></div>
-      <div class="amenity-card"><span class="num">04</span><h4>Cascada iluminada</h4><p>Rodeada de vegetación natural, crea un rincón perfecto para conectar con la naturaleza.</p></div>
-      <div class="amenity-card"><span class="num">05</span><h4>Área consagrada <span style="color:var(--gold);font-family:'Montserrat',sans-serif;font-weight:700;font-size:.8rem;">+$100</span></h4><p>Espacio sagrado para ceremonias religiosas, con un ambiente solemne, íntimo y espiritual.</p></div>
-      <div class="amenity-card"><span class="num">06</span><h4>Salón techado</h4><p>Capacidad máxima de 200 personas, estilo arquitectónico modernista y elegante.</p></div>
-    </div>
-    <p class="center" style="margin-top:26px;color:var(--text-soft);font-size:.88rem;">Uso de salón: 8 horas de servicio, hasta la 01:00 hrs.</p>
-  </div>
-</section>
-
-<section class="section" id="incluye">
-  <div class="container center">
-    <span class="eyebrow">La mejor manera de iniciar</span>
-    <h2>Coctel de bienvenida</h2>
-  </div>
-  <div class="container feature-row">
-    <div class="feature-item"><h4>Periqueras altas, salas lounge y sombrillas</h4><p>Mobiliario de bienvenida diseñado para brindar comodidad y un espacio relajado para la recepción de los invitados.</p></div>
-    <div class="feature-item"><h4>Margaritas de sabores sin alcohol (2 sabores)</h4><p>Bebidas preparadas sin alcohol, ideales para refrescar y dar inicio al evento.</p></div>
-    <div class="feature-item"><h4>Agua fresca (2 sabores)</h4><p>Aguas naturales de sabores, servidas frías como opción ligera y refrescante.</p></div>
-    <div class="feature-item"><h4>Crudités: pepino, jícama y zanahoria</h4><p>Con miguelito y chamoy, selección de vegetales frescos como botana tradicional.</p></div>
-    <div class="feature-item"><h4>Mojito sin alcohol</h4><p>Bebida refrescante preparada al momento como alternativa de coctelería.</p></div>
-    <div class="feature-item"><h4>Piñada (sin alcohol)</h4><p>Bebida tropical, ideal para complementar el coctel de bienvenida.</p></div>
-  </div>
-</section>
-
-<section class="section section-alt">
-  <div class="container center">
-    <span class="eyebrow">Para decorar y ambientar</span>
-    <h2>Montaje de banquete</h2>
-  </div>
-  <div class="container feature-row">
-    <div class="feature-item"><h4>Mesa principal</h4><p>Sillones Rey &amp; Reyna, templete de madera, back con luces vintage y telas, centro de mesa con flor de temporada.</p></div>
-    <div class="feature-item"><h4>Arreglo natural para centro de mesa</h4><p>Diseños exclusivos con flor natural de temporada: modelos redondos, largos y altos.</p></div>
-    <div class="feature-item"><h4>Mesa redonda (8 o 10 personas)</h4><p>Con mantel y silla Tiffany blanca, montaje moderno y refinado.</p></div>
-    <div class="feature-item"><h4>Mesa cuadrada (10 a 12 personas)</h4><p>Mantel blanco y silla Tiffany blanca, cálida y funcional.</p></div>
-    <div class="feature-item"><h4>Mesa campirana (10 a 12 personas)</h4><p>Madera con silla crossback, Tiffany, boss o lotus.</p></div>
-    <div class="feature-item"><h4>Mesa tipo mármol (10 a 12 personas)</h4><p>Combinación de sillas Tiffany, crossback, boss y/o lotus.</p></div>
-    <div class="feature-item"><h4>Mantelería</h4><p>Mantel blanco, camino y servilleta de tela en el color de tu elección.</p></div>
-    <div class="feature-item"><h4>Plato base, loza y cristalería</h4><p>Plato base decorativo, loza blanca de alta calidad, copas transparentes y de color, vaso cubero y tequilero.</p></div>
-    <div class="feature-item"><h4>Cubertería fina</h4><p>Acabados en plata, dorado y gold rose.</p></div>
-  </div>
-</section>
-
-<section class="section" id="menu">
-  <div class="container center">
-    <span class="eyebrow">Banquete a 4 tiempos</span>
-    <h2>Menú del evento</h2>
-  </div>
-  <div class="container" style="margin-top:36px;">
-    <div class="grid-3">
-      <div class="menu-block"><h4>Primer tiempo</h4><h3>Entradas</h3><p>Frescas ensaladas o deliciosas cremas para iniciar la experiencia gastronómica.</p></div>
-      <div class="menu-block"><h4>Segundo tiempo</h4><h3>Plato fuerte</h3><p>Opciones de pollo o cerdo con dos guarniciones a elegir. Incluye pan y chiles al centro de la mesa.</p></div>
-      <div class="menu-block"><h4>Tornafiesta</h4><h3>Barra de esquites o chilaquiles</h3><p>Servidos en desechables para cerrar con broche de oro. *Se considera al 60% de invitados.</p></div>
-    </div>
-    <div style="margin-top:22px;" class="menu-block">
-      <h4>Menú infantil</h4>
-      <h3>Tiritas de milanesa, hamburguesa o nuggets de pollo</h3>
-      <p>Acompañadas de espagueti, papas a la francesa y una golosina sorpresa.</p>
-    </div>
-    <div style="margin-top:22px;" class="menu-block">
-      <h4>Mezcladores disponibles</h4>
-      <h3>Selección de bebidas</h3>
-      <p>Servicio completo de hielo en cubos, agua natural y refrescos de la línea Coca-Cola (manzana, toronja, agua mineral y Coca-Cola clásica), además de limón y sal.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section section-alt">
-  <div class="container center">
-    <span class="eyebrow">Equipo de servicio</span>
-    <h2>Un equipo dedicado a cada detalle</h2>
-  </div>
-  <div class="container feature-row">
-    <div class="feature-item"><h4>Coordinador general</h4><p>Supervisa todos los aspectos del evento, asegurando que cada detalle se ejecute a la perfección.</p></div>
-    <div class="feature-item"><h4>Capitán de meseros</h4><p>Dirige al equipo de meseros, garantizando un servicio eficiente y atento.</p></div>
-    <div class="feature-item"><h4>Hostess</h4><p>Da la bienvenida a los invitados y los guía a sus asientos.</p></div>
-    <div class="feature-item"><h4>Meseros</h4><p>Personal capacitado para el servicio de alimentos y bebidas, con atención cordial y discreta.</p></div>
-    <div class="feature-item"><h4>Barra</h4><p>Equipo especializado en preparación y servicio de bebidas.</p></div>
-    <div class="feature-item"><h4>Cocina y personal de baños</h4><p>Preparación de alimentos con estándares de higiene, y sanitarios limpios durante todo el evento.</p></div>
-  </div>
-</section>
-
-<section class="section section-dark">
-  <div class="container center">
-    <span class="eyebrow" style="color:var(--gold-light)">Entretenimiento de alta calidad</span>
-    <h2>Servicio de DJ profesional</h2>
-    <p class="lead" style="color:#d8d2c0;">DJ con amplia experiencia, incluido dentro de tu paquete.</p>
-  </div>
-  <div class="container">
-    <ul class="courtesy-list" style="max-width:820px;">
-      <li>Mampara moderna</li>
-      <li>Audio e iluminación de alta calidad</li>
-      <li>Torres iluminadas (cabezas robóticas)</li>
-      <li>Pantalla con proyector</li>
-      <li>Globos multicolores, pulseras neón, collares hawaianos (en boda: corbatas y velos)</li>
-      <li>2 chisperos a control remoto</li>
-      <li>Micrófonos inalámbricos</li>
-      <li>Láser y máquina de humo</li>
-    </ul>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container center">
-    <span class="eyebrow">Cortesías incluidas</span>
-    <h2>Servicios complementarios</h2>
-  </div>
-  <div class="container">
-    <ul class="courtesy-list" style="max-width:760px;">
-      <li>Letras decorativas a elegir "XV" o "LOVE"</li>
-      <li>Corazón rojo decorativo iluminado</li>
-      <li>Mesa especial para pastel</li>
-      <li>Mesa especial para regalos</li>
-      <li>Detonación de dos chisperos de pirotecnia en frío</li>
-      <li>Alfombra roja para una entrada espectacular</li>
-    </ul>
-  </div>
-</section>
-
-<section class="section section-alt" id="paquete">
-  <div class="container center">
-    <span class="eyebrow">Cotización</span>
-    <h2>Paquete Villa Leona · Todo incluido</h2>
-    <p class="lead">Precio por persona. Incluye ambientación, banquete, DJ, mobiliario, equipo de servicio y cortesías descritas arriba.</p>
-  </div>
-
-  <div class="container">
-    <div class="price-card">
-      <div class="price-tiers">
-        <div class="tier">
-          <div class="menu-label">Menú 3 tiempos</div>
-          <div class="amount">$1,250<span> / persona</span></div>
+    <div id="preloader">
+        <video id="preloaderVideo" autoplay muted loop playsinline webkit-playsinline preload="auto">
+            <source src="precarga.mp4" type="video/mp4">
+        </video>
+        <div class="preloader-overlay">
+            <img class="preloader-logo" src="logo_primavera_events_group.png" alt="Primavera Events Group">
+            <h2 class="preloader-title">Bienvenidos</h2>
+            <p class="preloader-text">Descubre <strong>Villa Leona</strong>, Jardín de Eventos operado por Primavera Events Group: banquete, DJ, decoración y staff completo para tu celebración.</p>
+            <button id="btnEnter" class="btn-enter">Entrar al Jardín</button>
         </div>
-        <div class="tier featured">
-          <div class="tag">Recomendado</div>
-          <div class="menu-label">Menú 4 tiempos</div>
-          <div class="amount">$1,299<span> / persona</span></div>
-        </div>
-      </div>
-
-      <div class="price-meta">
-        <div class="row"><span class="k">Duración incluida</span><span class="v">8 horas de servicio</span></div>
-        <div class="row"><span class="k">Cortesía Primavera Events Group</span><span class="v">+1 hora de regalo para la ceremonia</span></div>
-        <div class="row"><span class="k">Hora extra adicional (uso de salón)</span><span class="v">$12,000 MXN</span></div>
-        <div class="row"><span class="k">Área consagrada (ceremonia religiosa)</span><span class="v">+$100</span></div>
-        <div class="row"><span class="k">Degustación exclusiva</span><span class="v">Incluida (4 personas)</span></div>
-      </div>
-
-      <p class="fine">
-        Precios sujetos a cambios sin previo aviso. Se requiere depósito para reservar. Los precios NO incluyen impuestos.
-        Se aplican tarifas adicionales por servicios extra (habitaciones, valet parking y planta de luz no están incluidos).
-      </p>
-
-      <div class="btn-row" style="margin-top:26px;">
-        <a href="#contacto" class="btn btn-gold">Reservar fecha</a>
-      </div>
     </div>
-  </div>
-</section>
 
-<section class="section">
-  <div class="container center">
-    <span class="eyebrow">Al firmar el contrato</span>
-    <h2>Lo que recibes desde el día uno</h2>
-  </div>
-  <div class="container">
-    <div class="steps">
-      <div class="step"><div class="n">1</div><h4>Degustación exclusiva</h4><p>Para 4 personas, para experimentar la calidad y el sabor del menú.</p></div>
-      <div class="step"><div class="n">2</div><h4>Diseño de montaje</h4><p>De acuerdo a tu paleta de colores.</p></div>
-      <div class="step"><div class="n">3</div><h4>Croquis</h4><p>Distribución detallada para el acomodo de tus invitados.</p></div>
-      <div class="step"><div class="n">4</div><h4>Minuto a minuto</h4><p>Cronograma del evento para puntualidad y fluidez.</p></div>
-      <div class="step"><div class="n">5</div><h4>Chat exclusivo</h4><p>Medio de comunicación directo para aclarar dudas y verificar detalles.</p></div>
-    </div>
-  </div>
-</section>
+    <header class="hero">
+        <div class="hero-video-wrap" style="background-image:url('https://img.youtube.com/vi/eQl4oj71JqI/maxresdefault.jpg');"></div>
+        <button class="hero-play-btn" id="btnPlayHero" title="Ver video de Villa Leona"><i class="fas fa-play"></i></button>
+        <div class="hero-content">
+            <p class="hero-eyebrow">Primavera Events Group</p>
+            <h1>Villa Leona</h1>
+            <p class="hero-sub">Jardín de Eventos</p>
+        </div>
+    </header>
 
-<section class="section section-dark" id="contacto">
-  <div class="container contact-grid">
-    <div>
-      <span class="eyebrow" style="color:var(--gold-light)">Agenda tu cita</span>
-      <h2 style="color:#f6f1e4;">Conoce las instalaciones de Villa Leona</h2>
-      <div class="divider left"></div>
-      <p style="color:#d8d2c0;max-width:480px;">Te invitamos a agendar una cita para conocer el jardín, resolver tus dudas y comenzar a planear tu evento con Primavera Events Group.</p>
-      <p class="motto" style="color:var(--gold-light);font-family:'Playfair Display',serif;font-style:italic;margin-top:26px;">"Te cuidas tú, nos cuidas a todos."</p>
+    <div class="video-modal" id="videoModal">
+        <button class="video-modal-cerrar" id="videoModalCerrar" aria-label="Cerrar">&times;</button>
+        <div class="video-modal-frame" id="videoModalFrame"></div>
     </div>
-    <div class="contact-card">
-      <div class="planner-row">
-        <div>
-          <div class="label">Planner</div>
-          <div class="val">Richard Hernández</div>
-        </div>
-        <div style="text-align:right;">
-          <div class="label">Teléfono</div>
-          <div class="val"><a href="tel:7774587923">777 458 7923</a></div>
-        </div>
-      </div>
-      <div class="planner-row">
-        <div>
-          <div class="label">Wedding Planner</div>
-          <div class="val">Jessica Rodríguez</div>
-        </div>
-        <div style="text-align:right;">
-          <div class="label">Teléfono</div>
-          <div class="val"><a href="tel:7773012421">777 301 2421</a></div>
-        </div>
-      </div>
-      <div class="planner-row">
-        <div>
-          <div class="label">Marca</div>
-          <div class="val">Primavera Events Group</div>
-        </div>
-        <div style="text-align:right;">
-          <div class="label">Sede</div>
-          <div class="val">Villa Leona · Jardín de Eventos</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<footer>
-  <div class="container">
-    <div class="brand" style="align-items:center;">
-      <span class="primary" style="color:#fff;">Villa Leona</span>
-      <span class="secondary">Jardín de Eventos</span>
-    </div>
-    <p style="margin-top:14px;">Primavera Events Group · Richard Hernández &amp; Jessica Rodríguez · 777 458 7923 / 777 301 2421</p>
-  </div>
-</footer>
+    <main class="container">
+        <div class="quote-card">
 
+            <div class="venue-logo-wrap">
+                <a href="#contacto" title="Contactar a tu planner">
+                    <img src="logo_primavera_events_group.png" alt="Primavera Events Group">
+                    <span>Villa Leona · Jardín de Eventos</span>
+                </a>
+            </div>
+
+            <div class="header-info">
+                <div class="header-main">
+                    <h2>Villa Leona</h2>
+                    <p>Un jardín para tus momentos más importantes: bodas, XV años y grandes celebraciones, con capacidad hasta para 300 invitados. Primavera Events Group coordina cada detalle dentro de estas instalaciones, desde la ambientación hasta el banquete, el DJ y el servicio de meseros.</p>
+                    <span class="badge-event">Paquete Todo Incluido</span>
+                </div>
+                <div class="summary-boxes">
+                    <div class="info-box"><span>Capacidad</span><strong>300 Px</strong></div>
+                    <div class="info-box"><span>Duración</span><strong>8+1 hrs</strong></div>
+                    <div class="info-box"><span>Estacionamiento</span><strong>60 autos</strong></div>
+                </div>
+            </div>
+
+            <!-- ══ EL JARDÍN VILLA LEONA — fotos reales de las instalaciones ══ -->
+            <h3 class="section-title reveal reveal-left"><i class="fas fa-seedling"></i> El Jardín Villa Leona</h3>
+            <div class="includes-grid">
+                <div class="reveal"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" src="villa_leona_carpa_salon.jpg" alt="Carpa y salón Villa Leona"></div><div class="include-content"><h4><i class="fas fa-tent"></i> Carpa y Salón</h4><p>Carpa plisada negra con tiras de focos y candiles de vidrio cortado. Capacidad máxima de 200 personas bajo techo.</p></div></div></div>
+                <div class="reveal reveal-left"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" src="villa_leona_jardin_logo.jpg" alt="Jardín Villa Leona"></div><div class="include-content"><h4><i class="fas fa-water"></i> Jardín y Área de Lounge</h4><p>Fuente y jardín con iluminación arquitectónica, mobiliario lounge sobre el área verde.</p></div></div></div>
+                <div class="reveal reveal-right"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" src="villa_leona_capilla.jpg" alt="Área consagrada / capilla Villa Leona"></div><div class="include-content"><h4><i class="fas fa-place-of-worship"></i> Área Consagrada <span style="color:var(--primary-pink);">+$100</span></h4><p>Pérgola techada para ceremonias civiles, religiosas o espirituales.</p></div></div></div>
+                <div class="reveal reveal-zoom"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" src="villa_leona_recepcion.jpg" alt="Recepción Villa Leona"></div><div class="include-content"><h4><i class="fas fa-door-open"></i> Área de Recepción</h4><p>Entrada con logotipo grabado, mural y zona de espera ajardinada.</p></div></div></div>
+            </div>
+            <div class="venue-info-grid">
+                <div class="venue-info-card reveal"><i class="fas fa-bed"></i><h5>Habitación de descanso</h5><p>Dentro del jardín, más 5 habitaciones para 12 Px (costo extra)</p></div>
+                <div class="venue-info-card reveal delay-1"><i class="fas fa-car"></i><h5>Estacionamiento privado</h5><p>Sin costo, hasta 60 autos. Valet parking por cuenta del contratante</p></div>
+                <div class="venue-info-card reveal delay-2"><i class="fas fa-utensils"></i><h5>Restaurante</h5><p>Como parte de las instalaciones</p></div>
+                <div class="venue-info-card reveal delay-3"><i class="fas fa-bolt"></i><h5>No incluye</h5><p>Planta de luz (contratación aparte)</p></div>
+            </div>
+            <p class="venue-info-note">* Habitación de descanso, estacionamiento y restaurante aún sin fotografía propia — se actualizan en cuanto Villa Leona las comparta.</p>
+
+            <!-- ══ COCTEL DE BIENVENIDA ══ -->
+            <div class="gallery-block-title reveal reveal-left">Coctel de Bienvenida</div>
+            <div class="includes-grid">
+                <div class="reveal"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" src="periqueras_altas.webp" alt="Periqueras altas"></div><div class="include-content"><h4><i class="fas fa-champagne-glasses"></i> Periqueras Altas &amp; Lounge</h4><p>Periqueras altas, salas lounge y sombrillas para recibir a tus invitados.</p></div></div></div>
+                <div class="reveal reveal-left"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" src="margaritas.webp" alt="Bebidas de bienvenida"></div><div class="include-content"><h4><i class="fas fa-martini-glass-citrus"></i> Margaritas y Mojito sin Alcohol</h4><p>Margaritas de sabores (2), agua fresca (2 sabores), mojito y piñada, todo sin alcohol.</p></div></div></div>
+                <div class="reveal reveal-right"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" src="crudites.webp" alt="Crudités"></div><div class="include-content"><h4><i class="fas fa-carrot"></i> Crudités</h4><p>Pepino, jícama y zanahoria con miguelito y chamoy.</p></div></div></div>
+            </div>
+
+            <!-- ══ MONTAJE Y DECORACIÓN ══ -->
+            <div class="gallery-block-title reveal reveal-left">Montaje y Decoración</div>
+            <div class="includes-grid">
+                <div class="reveal"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" src="mesa_principal_rey_reyna.webp" alt="Mesa principal"></div><div class="include-content"><h4><i class="fas fa-crown"></i> Mesa Principal Rey &amp; Reyna</h4><p>Sillones Rey &amp; Reyna, templete de madera y back con luces vintage y telas.</p></div></div></div>
+                <div class="reveal reveal-zoom"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" src="villa_leona_decoracion_candil.jpg" alt="Candil y decoración colgante Villa Leona"></div><div class="include-content"><h4><i class="fas fa-star"></i> Candil y Decoración Colgante</h4><p>Follaje seco, flores colgantes y candil sobre la mesa principal, montado dentro de la carpa de Villa Leona.</p></div></div></div>
+                <div class="reveal"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" src="villa_leona_montaje_mesa.jpg" alt="Montaje de mesa real en Villa Leona"></div><div class="include-content"><h4><i class="fas fa-utensils"></i> Montaje Real en Villa Leona</h4><p>Tiras de luces, candiles de vidrio cortado y mantelería montados en un evento reciente.</p></div></div></div>
+                <div class="reveal reveal-left"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" src="mesa_redonda_tiffany.webp" alt="Mesa redonda Tiffany"></div><div class="include-content"><h4><i class="fas fa-circle"></i> Mesa Redonda (8-10 Px)</h4><p>Con silla Tiffany blanca, montaje moderno y refinado.</p></div></div></div>
+                <div class="reveal reveal-right"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" src="mesa_cuadrada_tiffany.webp" alt="Mesa cuadrada"></div><div class="include-content"><h4><i class="fas fa-square"></i> Mesa Cuadrada (10-12 Px)</h4><p>Mantel blanco y silla Tiffany blanca.</p></div></div></div>
+                <div class="reveal"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" src="mesa_campirana.webp" alt="Mesa campirana"></div><div class="include-content"><h4><i class="fas fa-tree"></i> Mesa Campirana (10-12 Px)</h4><p>Madera con silla crossback, Tiffany, boss o lotus.</p></div></div></div>
+                <div class="reveal reveal-zoom"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" src="mesa_marmol_1.webp" alt="Mesa tipo mármol"></div><div class="include-content"><h4><i class="fas fa-gem"></i> Mesa Tipo Mármol (10-12 Px)</h4><p>Combinación de sillas Tiffany, crossback, boss y/o lotus.</p></div></div></div>
+                <div class="reveal reveal-left"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" src="centros_mesa_altos.webp" alt="Centros de mesa"></div><div class="include-content"><h4><i class="fas fa-fan"></i> Centros de Mesa Naturales</h4><p>Arreglos con flor natural de temporada: redondos, largos y altos.</p></div></div></div>
+                <div class="reveal"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" src="manteleria.webp" alt="Mantelería"></div><div class="include-content"><h4><i class="fas fa-scroll"></i> Mantelería</h4><p>Mantel blanco, camino y servilleta de tela en el color que elijas.</p></div></div></div>
+                <div class="reveal reveal-right"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" src="cristaleria.webp" alt="Cristalería"></div><div class="include-content"><h4><i class="fas fa-wine-glass"></i> Vajilla, Loza y Cristalería</h4><p>Plato base, loza blanca, cubertería fina en plata, dorado o gold rose, y cristalería completa.</p></div></div></div>
+            </div>
+
+            <!-- ══ BANQUETE A 4 TIEMPOS ══ -->
+            <div class="gallery-block-title reveal reveal-left">Banquete a 4 Tiempos</div>
+            <div class="includes-grid">
+                <div class="reveal reveal-zoom"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" src="banquete_entradas.webp" alt="Entradas"></div><div class="include-content"><h4><i class="fas fa-bowl-food"></i> Primer Tiempo · Entrada</h4><p>Frescas ensaladas o deliciosas cremas.</p></div></div></div>
+                <div class="reveal reveal-left"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" src="banquete_plato_fuerte.webp" alt="Plato fuerte"></div><div class="include-content"><h4><i class="fas fa-drumstick-bite"></i> Segundo Tiempo · Plato Fuerte</h4><p>Pollo o cerdo con dos guarniciones a elegir. Incluye pan y chiles al centro.</p></div></div></div>
+                <div class="reveal reveal-right"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" src="chilaquiles_tornafiesta.jpg" alt="Tornafiesta"></div><div class="include-content"><h4><i class="fas fa-pepper-hot"></i> Tornafiesta</h4><p>Barra de esquites o chilaquiles servidos en desechables. *Se considera al 60% de invitados.</p></div></div></div>
+                <div class="reveal"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" src="menu_infantil.webp" alt="Menú infantil"></div><div class="include-content"><h4><i class="fas fa-child-reaching"></i> Menú Infantil</h4><p>Tiritas de milanesa, hamburguesa o nuggets, con espagueti, papas y golosina sorpresa.</p></div></div></div>
+                <div class="reveal reveal-zoom"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" src="mezcladores.webp" alt="Mezcladores"></div><div class="include-content"><h4><i class="fas fa-glass-water"></i> Mezcladores</h4><p>Hielo en cubo, agua natural y refrescos línea Coca-Cola, limón y sal.</p></div></div></div>
+            </div>
+
+            <!-- ══ EQUIPO DE SERVICIO ══ -->
+            <div class="gallery-block-title reveal reveal-left">Equipo de Servicio</div>
+            <div class="includes-grid">
+                <div class="reveal reveal-left"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" src="coordinacion_servicio.webp" alt="Coordinación del evento"></div><div class="include-content"><h4><i class="fas fa-user-tie"></i> Coordinador General &amp; Capitán</h4><p>Coordinador general y capitán de meseros, supervisando cada detalle del servicio.</p></div></div></div>
+                <div class="reveal"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" src="hostess.webp" alt="Hostess"></div><div class="include-content"><h4><i class="fas fa-person-walking-luggage"></i> Hostess</h4><p>Da la bienvenida a los invitados y los guía a sus asientos.</p></div></div></div>
+                <div class="reveal reveal-right"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" src="meseros.webp" alt="Meseros"></div><div class="include-content"><h4><i class="fas fa-utensils"></i> Meseros y Barra</h4><p>Personal capacitado para el servicio de alimentos y bebidas.</p></div></div></div>
+                <div class="reveal reveal-zoom"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" src="personal_banos.jpg" alt="Personal de baños"></div><div class="include-content"><h4><i class="fas fa-restroom"></i> Personal de Baños</h4><p>Atención y limpieza continua de los sanitarios durante todo el evento.</p></div></div></div>
+            </div>
+
+            <!-- ══ DJ PROFESIONAL ══ -->
+            <div class="gallery-block-title reveal reveal-left">DJ Profesional, Audio e Iluminación</div>
+            <div class="includes-grid">
+                <div class="reveal"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" src="villa_leona_dj.jpg" alt="Estación de DJ real en Villa Leona"></div><div class="include-content"><h4><i class="fas fa-headphones"></i> DJ &amp; Mampara Moderna</h4><p>DJ con amplia experiencia, audio e iluminación de alta calidad, micrófonos inalámbricos.</p></div></div></div>
+                <div class="reveal reveal-zoom"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" src="pantalla_proyector.webp" alt="Pantalla y proyector"></div><div class="include-content"><h4><i class="fas fa-tv"></i> Pantalla con Proyector</h4><p>Torres iluminadas con cabezas robóticas, láser y máquina de humo.</p></div></div></div>
+                <div class="reveal reveal-left"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" style="object-position:50% 82%;" src="pista_leds_5x5.webp" alt="Pista de LEDs"></div><div class="include-content"><h4><i class="fas fa-border-all"></i> Ambientación de Pista</h4><p>Globos multicolores, pulseras neón, collares hawaianos (en boda: corbatas y velos).</p></div></div></div>
+            </div>
+
+            <!-- ══ CORTESÍAS ══ -->
+            <div class="gallery-block-title reveal reveal-left">Cortesías Incluidas</div>
+            <div class="includes-grid">
+                <div class="reveal reveal-right"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" src="letras_gigantes_iluminadas.webp" alt="Letras decorativas"></div><div class="include-content"><h4><i class="fas fa-font"></i> Letras Decorativas</h4><p>«XV» o «LOVE» a elegir, según el tipo de celebración.</p></div></div></div>
+                <div class="reveal"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" src="corazon_rojo_iluminado.webp" alt="Corazón iluminado"></div><div class="include-content"><h4><i class="fas fa-heart"></i> Corazón Rojo Iluminado</h4><p>Pieza decorativa para el área de fotos o la pista.</p></div></div></div>
+                <div class="reveal reveal-zoom"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" src="villa_leona_mesa_regalos.jpg" alt="Mesa de regalos real en Villa Leona"></div><div class="include-content"><h4><i class="fas fa-cake-candles"></i> Mesa de Pastel y Regalos</h4><p>Mesa especial para pastel y mesa especial para regalos, montadas y decoradas.</p></div></div></div>
+                <div class="reveal reveal-left"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" src="pirotecnia_fria_chisperos.webp" alt="Pirotecnia en frío"></div><div class="include-content"><h4><i class="fas fa-fire"></i> Pirotecnia en Frío</h4><p>Detonación de dos chisperos de pirotecnia en frío.</p></div></div></div>
+                <div class="reveal reveal-right"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" src="alfombra_roja.webp" alt="Alfombra roja"></div><div class="include-content"><h4><i class="fas fa-shoe-prints"></i> Alfombra Roja</h4><p>Para una entrada espectacular.</p></div></div></div>
+            </div>
+
+            <!-- ══ INVERSIÓN ══ -->
+            <div class="pricing-section reveal" id="paquete">
+                <h3>Su Inversión · Villa Leona Todo Incluido</h3>
+                <p class="calc-hint">Precio por persona. Incluye ambientación, banquete, DJ, mobiliario, equipo de servicio y cortesías descritas arriba.</p>
+                <div class="price-tiers">
+                    <div class="price-tier">
+                        <div class="menu-label">Menú 3 tiempos</div>
+                        <div class="price-hero">$1,250<sup>MXN</sup></div>
+                    </div>
+                    <div class="price-tier featured">
+                        <span class="tag">Recomendado</span>
+                        <div class="menu-label">Menú 4 tiempos</div>
+                        <div class="price-hero">$1,299<sup>MXN</sup></div>
+                    </div>
+                </div>
+                <div class="price-meta">
+                    <div class="row"><span class="k">Duración incluida</span><span class="v">8 horas de servicio</span></div>
+                    <div class="row"><span class="k">Cortesía Primavera Events Group</span><span class="v">+1 hora de regalo para la ceremonia</span></div>
+                    <div class="row"><span class="k">Hora extra adicional (uso de salón)</span><span class="v">$12,000 MXN</span></div>
+                    <div class="row"><span class="k">Área consagrada (ceremonia religiosa)</span><span class="v">+$100</span></div>
+                    <div class="row"><span class="k">Degustación exclusiva</span><span class="v">Incluida (4 personas)</span></div>
+                </div>
+                <div class="price-note">* Precios netos, sujetos a cambio sin previo aviso. No incluyen IVA. Se requiere depósito para reservar.</div>
+            </div>
+
+            <!-- ══ COMPLEMENTOS ══ -->
+            <div class="complementos-section">
+                <h3 class="section-title reveal reveal-left"><i class="fas fa-plus-circle"></i> Complementos y Servicios</h3>
+                <div class="complementos-grid">
+                    <div class="reveal reveal-left delay-1">
+                        <div class="complemento-card">
+                            <img class="complemento-img" src="cristaleria.webp" alt="Barra de bebidas premium">
+                            <div class="complemento-body">
+                                <h4><i class="fas fa-martini-glass"></i> Barra de Bebidas Premium</h4>
+                                <p>Opción adicional al paquete: barra con destilados premium, además de los mezcladores incluidos.</p>
+                                <a class="btn-complemento" href="#contacto">Consultar con tu planner</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reveal reveal-right delay-2">
+                        <div class="complemento-card">
+                            <img class="complemento-img" src="pub_jessy_richard.webp" alt="Fotografía y Video">
+                            <div class="complemento-body">
+                                <h4><i class="fas fa-camera"></i> Fotografía &amp; Video Profesional</h4>
+                                <p>Diferentes opciones de cobertura fotográfica y video cinematográfico. <strong>Se cotiza por separado.</strong></p>
+                                <a class="btn-complemento" href="https://primaveraeventsgroup.com/paquetes-de-fotografia-y-video/" target="_blank">Ver paquetes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ══ PUBLICIDAD ══ -->
+            <div class="publicidad-section">
+                <h3 class="section-title reveal reveal-left"><i class="fas fa-bullhorn"></i> Descubre Más de Primavera Events Group</h3>
+                <div class="publicidad-grid">
+                    <div class="reveal reveal-left delay-1"><a href="https://primaveraeventsgroup.com/bodas/" target="_blank" class="publicidad-card"><img src="pub_boda_ensueno.webp" alt="Bodas de Ensueño"><span class="publicidad-label">Bodas</span></a></div>
+                    <div class="reveal reveal-right delay-2"><a href="https://primaveraeventsgroup.com/quinceaneras-primavera/" target="_blank" class="publicidad-card"><img src="pub_xv_anos.webp" alt="XV Años"><span class="publicidad-label">XV Años</span></a></div>
+                    <div class="reveal reveal-left delay-3"><a href="https://primaveraeventsgroup.com/graduaciones-primavera/" target="_blank" class="publicidad-card"><img src="pub_graduados.webp" alt="Graduaciones"><span class="publicidad-label">Graduaciones</span></a></div>
+                    <div class="reveal reveal-right delay-4"><a href="https://primaveraeventsgroup.com/richard-hernandez/" target="_blank" class="publicidad-card"><img src="pub_jessy_richard.webp" alt="Wedding Planning"><span class="publicidad-label">Wedding &amp; Event Planning</span></a></div>
+                </div>
+            </div>
+
+            <!-- ══ KIT PLANNER ══ -->
+            <div class="kit-section reveal">
+                <div class="kit-content">
+                    <span class="kit-badge">EXCLUSIVO PARA CLIENTES</span>
+                    <h3>Kit Organizador de Eventos</h3>
+                    <p>Descarga gratis nuestra plantilla de control de presupuesto (Excel) y la guía maestra de organización (PDF) para planear tu evento paso a paso.</p>
+                </div>
+                <div class="kit-buttons">
+                    <a class="btn-kit" href="smart_event_planner_pro.xlsx" download><i class="fas fa-file-excel"></i> Descargar Excel</a>
+                    <a class="btn-kit" href="guia_maestra_primavera.pdf" download><i class="fas fa-file-pdf"></i> Descargar Guía PDF</a>
+                </div>
+            </div>
+
+            <div class="pdf-section">
+                <p>¿Deseas una versión física de esta información? Al imprimir se genera un documento simple con el resumen de precios.</p>
+                <button class="btn-pdf" onclick="window.print()"><i class="fas fa-file-pdf"></i> Imprimir / Guardar como PDF</button>
+            </div>
+
+            <div class="signature-section">
+                <video autoplay muted loop playsinline webkit-playsinline preload="auto">
+                    <source src="firma.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="notes-section reveal">
+                <h3><i class="fas fa-file-contract"></i> Condiciones y Notas Importantes</h3>
+                <ul>
+                    <li><strong>Duración del servicio:</strong> 8 horas continuas + 1 hora de regalo para la ceremonia (9 horas en total).</li>
+                    <li><strong>Hora extra adicional:</strong> uso de salón más allá de las 9 horas, $12,000 MXN.</li>
+                    <li><strong>Área consagrada:</strong> ceremonia religiosa, +$100.</li>
+                    <li><strong>Neto sin impuestos:</strong> precios netos; no incluyen IVA.</li>
+                    <li><strong>Reserva:</strong> se requiere depósito para bloquear la fecha en agenda.</li>
+                    <li><strong>Tornafiesta:</strong> barra de esquites o chilaquiles, considerada al 60% del total de invitados.</li>
+                    <li><strong>No incluye:</strong> planta de luz, habitaciones adicionales (costo extra), valet parking (por cuenta del contratante).</li>
+                    <li><strong>Al firmar contrato:</strong> degustación exclusiva (4 personas), diseño de montaje según tu paleta de colores, croquis de distribución, minuto a minuto del evento y chat exclusivo con coordinación.</li>
+                </ul>
+                <p class="quote-phrase">«Te cuidas tú, nos cuidas a todos.»</p>
+            </div>
+
+            <!-- ══ CONTACTO ══ -->
+            <div class="planners-contact-section reveal" id="contacto">
+                <h3 class="section-title" style="justify-content:center; border-bottom:none;"><i class="fas fa-comments"></i> Agenda tu Cita</h3>
+                <p class="calc-hint" style="text-align:center;">Te invitamos a conocer las instalaciones de Villa Leona. Toca la imagen de tu planner para contactarlo directamente:</p>
+                <div class="planners-grid">
+                    <a href="tel:7774587923" class="planner-card">
+                        <div class="planner-img-wrap">
+                            <img src="richard.webp" alt="Richard Hernández — Planner" class="planner-img">
+                            <div class="planner-overlay"><span class="btn-planner-cta"><i class="fas fa-phone"></i> 777 458 7923</span></div>
+                        </div>
+                        <div class="planner-info"><h4>Richard Hernández</h4><p>Planner</p></div>
+                    </a>
+                    <a href="tel:7773012421" class="planner-card">
+                        <div class="planner-img-wrap">
+                            <img src="jessy.png" alt="Jessica Rodríguez — Wedding Planner" class="planner-img">
+                            <div class="planner-overlay"><span class="btn-planner-cta"><i class="fas fa-phone"></i> 777 301 2421</span></div>
+                        </div>
+                        <div class="planner-info"><h4>Jessica Rodríguez</h4><p>Wedding Planner (W.P.)</p></div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <img class="footer-logo" src="logo_primavera_events_group.png" alt="Primavera Events Group">
+            <h3>Villa Leona · Jardín de Eventos</h3>
+            <p>Primavera Events Group · Richard Hernández &amp; Jessica Rodríguez</p>
+            <p><a href="tel:7774587923">777 458 7923</a> &nbsp;·&nbsp; <a href="tel:7773012421">777 301 2421</a></p>
+            <div class="footer-bottom">&copy; 2026 Primavera Events Group. Todos los derechos reservados.</div>
+        </div>
+    </footer>
+
+    <!-- ══ Botones flotantes: redes + compartir ══ -->
+    <div class="floating-actions-container">
+        <div class="fab-group" id="socialGroup">
+            <div class="fab-menu">
+                <a href="https://facebook.com/share/1GLd3Qt2Tj" target="_blank" class="fab-item" title="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://instagram.com/primavera.events.group?igsh=Y2g4d3hvZW95dDc5" target="_blank" class="fab-item" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://tiktok.com/@primavera_events_group?_r=1&_t=ZS-94uQ5m4lTyG" target="_blank" class="fab-item" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://linkedin.com/in/richard-hernandez-3844ba3b9" target="_blank" class="fab-item" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.youtube.com/@PrimaveraEventsGroup" target="_blank" class="fab-item" title="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+            <button class="fab-main fab-social" id="btnSocial"><span class="fab-label">Síguenos</span><i class="fas fa-thumbs-up"></i></button>
+        </div>
+        <button class="fab-main fab-share" id="btnShare" title="Compartir"><span class="fab-label">Compartir</span><i class="fas fa-share-nodes"></i></button>
+    </div>
+
+    <script>
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    window.scrollTo(0, 0);
+    window.addEventListener('load', function(){ window.scrollTo(0, 0); });
+
+    // Preloader
+    const btnEnter = document.getElementById('btnEnter');
+    const preloader = document.getElementById('preloader');
+
+    document.body.style.overflow = 'hidden';
+    btnEnter.addEventListener('click', () => {
+        document.body.style.overflow = '';
+        window.scrollTo(0, 0);
+        preloader.classList.add('fade-out');
+    });
+
+    // Video de portada: solo carga y suena si el usuario da clic
+    (function(){
+        var btn = document.getElementById('btnPlayHero');
+        var modal = document.getElementById('videoModal');
+        var frame = document.getElementById('videoModalFrame');
+        var cerrar = document.getElementById('videoModalCerrar');
+        if (!btn || !modal) return;
+        btn.addEventListener('click', function(){
+            frame.innerHTML = '<iframe src="https://www.youtube.com/embed/eQl4oj71JqI?autoplay=1&rel=0&modestbranding=1" title="Villa Leona - Jardín de Eventos" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+            modal.classList.add('abierto');
+        });
+        function cerrarModal(){ modal.classList.remove('abierto'); frame.innerHTML = ''; }
+        cerrar.addEventListener('click', cerrarModal);
+        modal.addEventListener('click', function(e){ if (e.target === modal) cerrarModal(); });
+        document.addEventListener('keydown', function(e){ if (e.key === 'Escape') cerrarModal(); });
+    })();
+
+    // Botones flotantes: toggle + compartir nativo
+    const fabGroups = document.querySelectorAll('.fab-group');
+    fabGroups.forEach(g => {
+        const btn = g.querySelector('.fab-main');
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            fabGroups.forEach(o => { if (o !== g) o.classList.remove('active'); });
+            g.classList.toggle('active');
+        });
+    });
+    document.addEventListener('click', () => fabGroups.forEach(g => g.classList.remove('active')));
+
+    const btnShare = document.getElementById('btnShare');
+    const shareData = { title: 'Villa Leona - Jardín de Eventos | Primavera Events Group', text: 'Conoce Villa Leona, Jardín de Eventos, con Primavera Events Group.', url: window.location.href };
+    btnShare.addEventListener('click', async () => {
+        if (navigator.share) {
+            try { await navigator.share(shareData); } catch (err) { if (err.name !== 'AbortError') console.error(err); }
+        } else {
+            try { await navigator.clipboard.writeText(window.location.href); alert('Enlace copiado al portapapeles.'); }
+            catch (err) { alert('Por favor, copia el enlace de la barra de direcciones de tu navegador.'); }
+        }
+    });
+
+    // Reveal on scroll
+    function initReveals() {
+        var reveals = document.querySelectorAll('.reveal');
+        if (!reveals.length) return;
+        if (!('IntersectionObserver' in window)) { reveals.forEach(function(r){ r.classList.add('active'); }); return; }
+        var observer = new IntersectionObserver(function(entries, obs){
+            entries.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('active'); obs.unobserve(e.target); } });
+        }, { threshold: 0.01, rootMargin: '50px 0px 150px 0px' });
+        reveals.forEach(function(r){
+            var rect = r.getBoundingClientRect();
+            if (rect.top < window.innerHeight + 120) { r.classList.add('active'); } else { observer.observe(r); }
+        });
+        window.addEventListener('beforeprint', function(){ reveals.forEach(function(r){ r.classList.add('active'); }); });
+    }
+    if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initReveals); } else { initReveals(); }
+
+    // Barra de progreso de lectura
+    window.addEventListener('scroll', function(){
+        var h = document.documentElement;
+        var pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+        document.getElementById('lecturaBarra').style.width = pct + '%';
+    }, { passive:true });
+
+    // Reproducción en bucle infinito para móviles (iOS / Android)
+    (function(){
+        var videoElems = document.querySelectorAll('video');
+        videoElems.forEach(function(v){
+            v.loop = true; v.muted = true; v.defaultMuted = true;
+            v.setAttribute('loop',''); v.setAttribute('muted',''); v.setAttribute('playsinline',''); v.setAttribute('webkit-playsinline','');
+            v.addEventListener('ended', function(){ v.currentTime = 0; v.play().catch(function(){}); });
+        });
+        var unlockAll = function() {
+            videoElems.forEach(function(v){ if (v.paused) { v.play().catch(function(){}); } });
+            window.removeEventListener('touchstart', unlockAll);
+            window.removeEventListener('click', unlockAll);
+        };
+        window.addEventListener('touchstart', unlockAll, { passive: true, once: true });
+        window.addEventListener('click', unlockAll, { passive: true, once: true });
+        if ('IntersectionObserver' in window) {
+            var vObs = new IntersectionObserver(function(entries){
+                entries.forEach(function(e){
+                    var vid = e.target;
+                    if (e.isIntersecting) { if (vid.ended) vid.currentTime = 0; vid.play().catch(function(){}); }
+                    else if (vid.id !== 'preloaderVideo') { vid.pause(); }
+                });
+            }, { threshold: 0.1 });
+            videoElems.forEach(function(v){ if (v.id !== 'preloaderVideo') vObs.observe(v); });
+        }
+    })();
+    </script>
 </body>
 </html>
