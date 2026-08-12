@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Villa Leona | Jardín de Eventos — Primavera Events Group</title>
     <meta name="description" content="Villa Leona, Jardín de Eventos operado por Primavera Events Group. Paquete todo incluido: banquete, DJ, decoración y staff completo para bodas, XV años y grandes celebraciones.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Villa Leona · Jardín de Eventos">
+    <meta property="og:title" content="Villa Leona | Jardín de Eventos — Primavera Events Group">
+    <meta property="og:description" content="Jardín de eventos para bodas, XV años y grandes celebraciones. Paquete todo incluido: banquete, DJ, decoración y staff completo, con Primavera Events Group.">
+    <meta property="og:image" content="https://5410m0n0c001.github.io/Villa-leona-/logo_primavera_events_group.png">
+    <meta property="og:url" content="https://5410m0n0c001.github.io/Villa-leona-/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Villa Leona | Jardín de Eventos — Primavera Events Group">
+    <meta name="twitter:description" content="Jardín de eventos para bodas, XV años y grandes celebraciones. Paquete todo incluido: banquete, DJ, decoración y staff completo, con Primavera Events Group.">
+    <meta name="twitter:image" content="https://5410m0n0c001.github.io/Villa-leona-/logo_primavera_events_group.png">
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -100,6 +112,23 @@
         .video-section { margin:20px 0 45px; }
         .video-frame { position:relative; border-radius:20px; overflow:hidden; border:1px solid var(--beige); background:var(--primary-dark); box-shadow:0 18px 40px rgba(31,31,31,.14); aspect-ratio:16/9; }
         .video-frame iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+        .video-frame video { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; background:#000; }
+
+        .ficha-demo { margin:20px 0 45px; }
+        .ficha-demo-card { border:1px solid var(--beige); border-radius:16px; overflow:hidden; background:var(--white); box-shadow:0 10px 30px rgba(31,31,31,.06); }
+        .ficha-demo-top { display:flex; justify-content:space-between; align-items:center; background:linear-gradient(135deg,var(--primary-dark) 0%,var(--dark-grad-end) 100%); color:#fff; padding:14px 22px; font-size:.85rem; letter-spacing:.05em; text-transform:uppercase; font-weight:700; }
+        .ficha-demo-top span:last-child { color:var(--gold-accent); font-size:.7rem; font-weight:600; text-transform:none; letter-spacing:0; }
+        .ficha-demo-stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); border-bottom:1px solid var(--beige); }
+        .ficha-demo-stats div { text-align:center; padding:18px 10px; border-right:1px solid var(--beige); }
+        .ficha-demo-stats div:last-child { border-right:none; }
+        .ficha-demo-stats strong { display:block; font-family:var(--font-serif); font-size:1.3rem; color:var(--primary-dark); }
+        .ficha-demo-stats span { font-size:.66rem; text-transform:uppercase; letter-spacing:.08em; color:var(--gray-text); }
+        .ficha-demo-body { display:grid; grid-template-columns:1.2fr 1fr; gap:20px; padding:22px; }
+        .ficha-demo-body p { font-size:.86rem; margin-bottom:8px; color:var(--primary-dark); }
+        .ficha-demo-note { background:var(--background-light); border:1px dashed var(--beige); border-radius:12px; padding:14px 16px; }
+        .ficha-demo-note strong { display:block; font-size:.78rem; text-transform:uppercase; letter-spacing:.05em; color:var(--primary-pink); margin-bottom:6px; }
+        .ficha-demo-note p { font-size:.8rem; color:var(--gray-text); margin:0; }
+        @media (max-width:640px){ .ficha-demo-body { grid-template-columns:1fr; } }
 
         .pricing-section { background:linear-gradient(135deg,var(--primary-dark) 0%,var(--dark-grad-end) 100%); border-radius:24px; padding:45px; margin-top:30px; color:var(--white); text-align:center; }
         .pricing-section h3 { font-size:1.3rem; color:var(--gold-accent); margin-bottom:5px; text-transform:uppercase; letter-spacing:2px; }
@@ -149,6 +178,17 @@
             background:linear-gradient(to top, rgba(31,31,31,.92) 0%, rgba(31,31,31,.72) 60%, rgba(31,31,31,0) 100%);
             color:var(--white); font-size:.82rem; font-weight:600; letter-spacing:.5px; padding:22px 10px 12px; }
         .publicidad-card:hover .publicidad-label { background:linear-gradient(to top, var(--primary-pink) 0%, rgba(246,92,122,.75) 60%, rgba(246,92,122,0) 100%); }
+
+        .expo-section { margin-top:50px; }
+        .expo-card { background:linear-gradient(135deg,var(--primary-dark) 0%,var(--dark-grad-end) 100%); border-radius:24px; display:flex; overflow:hidden; color:white; box-shadow:0 20px 40px rgba(0,0,0,.2); align-items:stretch; flex-wrap:wrap; }
+        .expo-content { padding:40px; flex:1; min-width:260px; }
+        .expo-badge { background:var(--primary-pink); padding:6px 15px; border-radius:50px; font-size:.8rem; text-transform:uppercase; font-weight:600; letter-spacing:1px; display:inline-block; margin-bottom:18px; }
+        .expo-content h3 { font-size:1.7rem; margin-bottom:12px; line-height:1.2; }
+        .expo-content p { color:#ccc; margin-bottom:22px; font-size:.95rem; }
+        .btn-expo { background:white; color:var(--primary-dark); padding:12px 26px; border-radius:50px; text-decoration:none; display:inline-flex; align-items:center; gap:10px; font-weight:600; transition:all .3s ease; }
+        .btn-expo:hover { background:var(--primary-pink); color:white; transform:scale(1.05); }
+        .expo-img-box { flex:1; min-width:220px; overflow:hidden; }
+        .expo-img-box img { width:100%; height:100%; object-fit:cover; min-height:200px; }
 
         .kit-section { margin-top:50px; background:linear-gradient(135deg,var(--primary-dark) 0%,var(--dark-grad-end) 100%); border-radius:20px; padding:40px; color:white; display:flex; flex-wrap:wrap; align-items:center; gap:30px; }
         .kit-content { flex:1; min-width:250px; }
@@ -399,6 +439,49 @@
                 <div class="price-note">* Precios netos, sujetos a cambio sin previo aviso. No incluyen IVA. Se requiere depósito para reservar.</div>
             </div>
 
+            <!-- ══ Croquis interactivo: INCLUIDO EN EL SERVICIO ══ -->
+            <div class="video-section reveal">
+                <h3 class="section-title"><i class="fas fa-map"></i> Croquis Interactivo 2D y 3D <span style="font-size:0.8rem; background:var(--gold-accent); color:var(--white); padding:3px 10px; border-radius:12px; vertical-align:middle; font-weight:600; text-transform:uppercase; margin-left:8px;">Incluido</span></h3>
+                <p class="calc-hint">Al firmar contrato diseñamos el montaje según tu paleta de colores y te entregamos el croquis de distribución, el minuto a minuto y un chat directo con coordinación. Video de muestra de la herramienta interactiva:</p>
+                <div class="video-frame">
+                    <video controls autoplay muted loop playsinline webkit-playsinline preload="metadata">
+                        <source src="croquis_interactivo.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            <!-- ══ Ficha técnica: ejemplo ilustrativo (datos genéricos, no de un cliente real) ══ -->
+            <div class="ficha-demo reveal">
+                <h3 class="section-title"><i class="fas fa-list-ol"></i> Ficha Técnica del Evento <span style="font-size:0.8rem; background:var(--gold-accent); color:var(--white); padding:3px 10px; border-radius:12px; vertical-align:middle; font-weight:600; text-transform:uppercase; margin-left:8px;">Incluido</span></h3>
+                <p class="calc-hint">Al firmar contrato recibes una ficha técnica con el detalle logístico de tu evento en Villa Leona. Ejemplo ilustrativo del formato (datos de muestra, no de un cliente real):</p>
+                <div class="ficha-demo-card">
+                    <div class="ficha-demo-top">
+                        <span><i class="fas fa-qrcode"></i> Ficha Técnica</span>
+                        <span>Proyecto de muestra</span>
+                    </div>
+                    <div class="ficha-demo-stats">
+                        <div><strong>150</strong><span>Invitados</span></div>
+                        <div><strong>15</strong><span>Total mesas</span></div>
+                        <div><strong>Villa Leona</strong><span>Lugar</span></div>
+                        <div><strong>[Fecha]</strong><span>Fecha reporte</span></div>
+                    </div>
+                    <div class="ficha-demo-body">
+                        <div>
+                            <p><strong>Festejado(a):</strong> [Nombre]</p>
+                            <p><strong>Lugar:</strong> Villa Leona</p>
+                            <p><strong>Comensales en plano:</strong> Según confirmación</p>
+                            <p><strong>Coordinador general:</strong> Equipo Primavera Events Group</p>
+                            <p><strong>Tiempo de renta/servicio:</strong> 8 + 1 horas</p>
+                        </div>
+                        <div class="ficha-demo-note">
+                            <strong>Conciliación de banquetes</strong>
+                            <p>Platos contratados vs. comensales en plano, requerido por menú, estatus de confirmación.</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="venue-info-note">* Ejemplo ilustrativo del formato de entrega — no corresponde a un evento ni cliente real. Tu ficha técnica se genera con los datos reales de tu evento al firmar contrato.</p>
+            </div>
+
             <!-- ══ COMPLEMENTOS ══ -->
             <div class="complementos-section">
                 <h3 class="section-title reveal reveal-left"><i class="fas fa-plus-circle"></i> Complementos y Servicios</h3>
@@ -434,6 +517,23 @@
                     <div class="reveal reveal-right delay-2"><a href="https://primaveraeventsgroup.com/quinceaneras-primavera/" target="_blank" class="publicidad-card"><img src="pub_xv_anos.webp" alt="XV Años"><span class="publicidad-label">XV Años</span></a></div>
                     <div class="reveal reveal-left delay-3"><a href="https://primaveraeventsgroup.com/graduaciones-primavera/" target="_blank" class="publicidad-card"><img src="pub_graduados.webp" alt="Graduaciones"><span class="publicidad-label">Graduaciones</span></a></div>
                     <div class="reveal reveal-right delay-4"><a href="https://primaveraeventsgroup.com/richard-hernandez/" target="_blank" class="publicidad-card"><img src="pub_jessy_richard.webp" alt="Wedding Planning"><span class="publicidad-label">Wedding &amp; Event Planning</span></a></div>
+                </div>
+            </div>
+
+            <!-- ══ EXPO BODA Y 15 AÑOS — edición pasada de Primavera Events Group ══ -->
+            <div class="expo-section reveal reveal-right">
+                <div class="expo-card">
+                    <div class="expo-content">
+                        <span class="expo-badge">Edición pasada</span>
+                        <h3>Explora la Expo Boda y 15 Años que hacemos cada año</h3>
+                        <p>Cada año reunimos en un solo lugar a los mejores proveedores de eventos de Morelos: banquetes, decoración, fotografía, locaciones y pasarela. Así se vivió la edición pasada en el Centro de Convenciones Presidente.</p>
+                        <a href="https://primaveraeventsgroup.com/expo-boda-y-quince-anos-centro-de-convenciones-presidente/" class="btn-expo" target="_blank">
+                            Ver cómo son nuestras expos <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="expo-img-box">
+                        <img src="expo_boda_15_anos.webp" alt="Expo Boda y 15 Años, edición pasada">
+                    </div>
                 </div>
             </div>
 
