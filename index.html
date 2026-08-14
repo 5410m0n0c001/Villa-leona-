@@ -107,6 +107,13 @@
         .include-content h4 i { color:var(--primary-pink); font-size:.9rem; }
         .include-content p { font-size:.85rem; color:var(--gray-text); }
 
+        .mini-carousel { position:relative; width:100%; height:100%; }
+        .mini-carousel img { position:absolute; inset:0; opacity:0; transition:opacity 1.1s ease; }
+        .mini-carousel img.on { opacity:1; }
+        .mini-carousel .mc-dots { position:absolute; left:0; right:0; bottom:8px; display:flex; justify-content:center; gap:5px; z-index:2; margin:0; }
+        .mini-carousel .mc-dots span { width:5px; height:5px; border-radius:50%; background:rgba(255,255,255,.55); box-shadow:0 1px 3px rgba(0,0,0,.5); transition:all .3s; }
+        .mini-carousel .mc-dots span.on { background:#fff; width:14px; border-radius:8px; }
+
         .gallery-block-title { font-size:.85rem; text-transform:uppercase; letter-spacing:2.5px; color:var(--primary-pink); font-weight:700; margin:40px 0 16px; padding-bottom:8px; border-bottom:1px dashed var(--beige); }
 
         .video-section { margin:20px 0 45px; }
@@ -357,9 +364,31 @@
             <!-- ══ EL JARDÍN VILLA LEONA — fotos reales de las instalaciones ══ -->
             <h3 class="section-title reveal reveal-left"><i class="fas fa-seedling"></i> El Jardín Villa Leona</h3>
             <div class="includes-grid">
-                <div class="reveal"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" src="villa_leona_salon.jpg" alt="Salón techado Villa Leona"></div><div class="include-content"><h4><i class="fas fa-warehouse"></i> Salón Techado</h4><p>Salón con plafón decorativo, tiras de focos y candiles de vidrio cortado. Capacidad máxima de 200 personas bajo techo.</p></div></div></div>
-                <div class="reveal reveal-left"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" src="villa_leona_jardin_logo.jpg" alt="Jardín Villa Leona"></div><div class="include-content"><h4><i class="fas fa-water"></i> Jardín y Área de Lounge</h4><p>Fuente y jardín con iluminación arquitectónica, mobiliario lounge sobre el área verde.</p></div></div></div>
-                <div class="reveal reveal-right"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" src="villa_leona_capilla.jpg" alt="Área consagrada / capilla Villa Leona"></div><div class="include-content"><h4><i class="fas fa-place-of-worship"></i> Área Consagrada <span style="color:var(--primary-pink);">+$100/persona</span></h4><p>Pérgola techada para ceremonias civiles, religiosas o espirituales.</p></div></div></div>
+                <div class="reveal"><div class="include-item"><div class="include-img-container"><div class="mini-carousel">
+                    <img class="include-img on" loading="lazy" src="villa_leona_salon.jpg" alt="Salón techado Villa Leona, vista general con candil colgante">
+                    <img class="include-img" loading="lazy" src="salon_panoramica_mesas.webp" alt="Salón techado con mesas montadas, vista panorámica">
+                    <img class="include-img" loading="lazy" src="salon_panoramica_2.webp" alt="Salón techado Villa Leona, otra vista panorámica del montaje">
+                    <img class="include-img" loading="lazy" src="salon_decoracion_colgante.webp" alt="Detalle de la decoración colgante y candil del salón">
+                    <img class="include-img" loading="lazy" src="salon_montaje_mesa.webp" alt="Montaje de mesa dentro del salón techado">
+                    <img class="include-img" loading="lazy" src="salon_pista_ambiente.webp" alt="Ambiente de pista dentro del salón techado durante un evento">
+                </div></div><div class="include-content"><h4><i class="fas fa-warehouse"></i> Salón Techado</h4><p>Salón con plafón decorativo, tiras de focos y candiles de vidrio cortado. Capacidad máxima de 200 personas bajo techo.</p></div></div></div>
+                <div class="reveal reveal-left"><div class="include-item"><div class="include-img-container"><div class="mini-carousel">
+                    <img class="include-img on" loading="lazy" src="villa_leona_jardin_logo.jpg" alt="Jardín Villa Leona, área lounge con sombrillas">
+                    <img class="include-img" loading="lazy" src="jardin_acceso_lounge.webp" alt="Acceso al área de jardín y lounge de Villa Leona">
+                    <img class="include-img" loading="lazy" src="jardin_lounge_palmeras.webp" alt="Área lounge del jardín entre palmeras">
+                    <img class="include-img" loading="lazy" src="jardin_logo_cristal.webp" alt="Logotipo Villa Leona grabado en cristal, dentro del jardín">
+                    <img class="include-img" loading="lazy" src="jardin_lounge_sofas.webp" alt="Mobiliario lounge sobre el área verde del jardín">
+                    <img class="include-img" loading="lazy" src="jardin_entrada_decorada.webp" alt="Entrada del jardín decorada para una celebración">
+                </div></div><div class="include-content"><h4><i class="fas fa-water"></i> Jardín y Área de Lounge</h4><p>Fuente y jardín con iluminación arquitectónica, mobiliario lounge sobre el área verde.</p></div></div></div>
+                <div class="reveal reveal-right"><div class="include-item"><div class="include-img-container"><div class="mini-carousel">
+                    <img class="include-img on" loading="lazy" src="villa_leona_capilla.jpg" alt="Área consagrada / capilla Villa Leona, vista del altar">
+                    <img class="include-img" loading="lazy" src="villa_leona_capilla_detalle.jpg" alt="Detalle floral del altar en la capilla Villa Leona">
+                    <img class="include-img" loading="lazy" src="capilla_ext_frente.webp" alt="Fachada exterior de la capilla Villa Leona">
+                    <img class="include-img" loading="lazy" src="capilla_ext_lateral.webp" alt="Vista lateral exterior de la capilla Villa Leona">
+                    <img class="include-img" loading="lazy" src="capilla_altar_detalle.webp" alt="Detalle de la cruz y el altar en la capilla">
+                    <img class="include-img" loading="lazy" src="capilla_pasillo_jardin.webp" alt="Pasillo de acceso a la capilla desde el jardín">
+                    <img class="include-img" loading="lazy" src="capilla_interior_2.webp" alt="Interior de la capilla con sillas vestidas de blanco">
+                </div></div><div class="include-content"><h4><i class="fas fa-place-of-worship"></i> Área Consagrada <span style="color:var(--primary-pink);">+$100/persona</span></h4><p>Pérgola techada para ceremonias civiles, religiosas o espirituales.</p></div></div></div>
                 <div class="reveal reveal-zoom"><div class="include-item"><div class="include-img-container"><img class="include-img" loading="lazy" src="villa_leona_recepcion.jpg" alt="Recepción Villa Leona"></div><div class="include-content"><h4><i class="fas fa-door-open"></i> Área de Recepción</h4><p>Entrada con logotipo grabado, mural y zona de espera ajardinada.</p></div></div></div>
             </div>
             <div class="venue-info-grid">
@@ -709,6 +738,40 @@
         var pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
         document.getElementById('lecturaBarra').style.width = pct + '%';
     }, { passive:true });
+
+    // ══ Mini-carruseles rotatorios (capilla, salón, jardín, etc.) ══
+    (function(){
+        var carousels = document.querySelectorAll('.mini-carousel');
+        if (!carousels.length) return;
+        carousels.forEach(function(mc, ci){
+            var imgs = mc.querySelectorAll('img');
+            if (imgs.length <= 1) return;
+            var dotsWrap = document.createElement('div');
+            dotsWrap.className = 'mc-dots';
+            imgs.forEach(function(_, i){
+                var d = document.createElement('span');
+                if (i === 0) d.className = 'on';
+                dotsWrap.appendChild(d);
+            });
+            mc.appendChild(dotsWrap);
+            var idx = 0, timer = null;
+            var period = 3400 + (ci % 5) * 350;
+            function next(){
+                imgs[idx].classList.remove('on');
+                dotsWrap.children[idx].classList.remove('on');
+                idx = (idx + 1) % imgs.length;
+                imgs[idx].classList.add('on');
+                dotsWrap.children[idx].classList.add('on');
+            }
+            function arranca(){ if (!timer) timer = setInterval(next, period); }
+            function detiene(){ clearInterval(timer); timer = null; }
+            if ('IntersectionObserver' in window) {
+                new IntersectionObserver(function(entries){
+                    entries.forEach(function(e){ e.isIntersecting ? arranca() : detiene(); });
+                }, { threshold: 0.2 }).observe(mc);
+            } else { arranca(); }
+        });
+    })();
 
     // ══ Carrusel del minuto a minuto ══
     (function(){
